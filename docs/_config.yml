@@ -5,6 +5,8 @@ baseurl: "/"
 giturl: "https://github.com/doubledotlabs/css"
 stylesurl: "https://doubledot.dev/css/styles.css"
 
+build: "prod"
+
 collections:
     elements:
         output: true

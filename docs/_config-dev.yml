@@ -1,5 +1,7 @@
 baseurl: ""
 stylesurl: "/dist/styles.css"
 
+build: "dev"
+
 sass:
     sass_dir: ./dist

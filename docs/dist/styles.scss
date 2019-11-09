@@ -1,4 +1,6 @@
 ---
 ---
 
+{% if site.build == "dev" %}
 @import "../../styles.scss";
+{% endif %}
