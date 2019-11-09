@@ -23,7 +23,7 @@ layout: default
 	<div>{{ page.content }}</div>
 	<h2 id="code">Code</h2>
 	<pre><code class="html">{{ page.content | xml_escape }}</code></pre>
-	<a class="link" href="{{ site.giturl }}/blob/css/{{ category.file | default: page.file }}">
+	<a class="link" href="{{ site.giturl }}/blob/master/{{ category.file | default: page.file }}">
 		<i class="link__img material-icons">code</i>
 		<span class="link__title">View Source CSS</span>
 	</a>
