@@ -2,7 +2,7 @@ name: "dot.css"
 description: "Double Dot Labs stylesheets"
 url: "/dot-css"
 baseurl: "/"
-giturl: "https://github.com/doubledotlabs/css"
+giturl: "https://github.com/doubledotlabs/dot-css"
 stylesurl: "https://doubledot.dev/css/styles.css"
 
 build: "prod"
