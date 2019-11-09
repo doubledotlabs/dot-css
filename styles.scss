@@ -1,4 +1,5 @@
 @import "global.scss";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 * {
 	font-family: $font-body;
@@ -38,6 +39,11 @@ body {
 	transition: background-color .25s;
 	-moz-transition: background-color .25s;
 	-webkit-transition: background-color .25s;
+}
+
+h1, h2, h3, h4, h5,
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a {
+    font-family: $font-heading;
 }
 
 p {
@@ -93,6 +99,7 @@ a:focus {
 @import "elements/tabs.scss";
 @import "elements/code.scss";
 @import "elements/form.scss";
+@import "elements/select.scss";
 @import "elements/layout.scss";
 @import "elements/sidebar.scss";
 @import "elements/img.scss";
@@ -102,7 +109,7 @@ a:focus {
 body {
 	margin: 0;
 
-	@include var("background-color", "normal-background-darker");
+	@include var("background-color", "normal-background");
 	@include var("color", "normal-color");
 
 	word-wrap: break-word;

@@ -23,84 +23,6 @@ form.form--wide {
 	margin: 0 -10vw;
 }
 
-select {
-	@include var("color", "normal-color");
-	@include var(
-		"border",
-		(1px, solid, "normal-outline")
-	);
-
-	display: block;
-	outline: none;
-	padding: 0.4em 0.8em;
-	padding-right: 30px;
-	margin-bottom: 0.8em;
-	min-width: 100%;
-
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-
-	// TODO: replace with url(.svg)
-	background: linear-gradient(45deg, transparent 50%, #FFF 50%), linear-gradient(135deg, #FFF 50%, transparent 50%), #0091EA;
-	background: linear-gradient(45deg, transparent 50%, var(--normal-color) 50%), linear-gradient(135deg, var(--normal-color) 50%, transparent 50%), var(--normal-background);
-  	background-position: calc(100% - 17px) 1em, calc(100% - 12px) 1em;
-  	background-size: 5px 5px, 5px 5px;
-  	background-repeat: no-repeat;
-
-	-webkit-transition: color .25s, border .25s, box-shadow .25s;
-	-moz-transition: color .25s, border .25s, box-shadow .25s;
-	transition: color .25s, border .25s, box-shadow .25s;
-}
-
-select:hover {
-	@include var("color", "normal-color-focus");
-	@include var(
-		"border",
-		(1px, solid, "normal-color-focus")
-	);
-	
-	box-shadow: none;
-}
-
-select::-ms-expand {
-	display: none;
-}
-
-select * {
-	@include var("background-color", "normal-background");
-	@include var("color", "normal-color-focus");
-
-	-webkit-transition: color .25s, background-color .25s;
-	-moz-transition: color .25s, background-color .25s;
-	transition: color .25s, background-color .25s;
-}
-
-select *:hover {
-	@include var("background-color", "accent-color");
-	@include var("color", "accent-inverse");
-}
-
-input[type=range] {
-	@include var("background-color", "normal-focus");
-	@include var(
-		"border",
-		(1px, solid, "normal-outline")
-	);
-
-	-webkit-appearance: none;
-	-webkit-tap-highlight-color: transparent;
-	width: 128px;
-	height: 20px;
-	margin: 0;
-	border: none;
-	outline: none;
-
-	-webkit-transition: border .25s;
-	-moz-transition: border .25s;
-	transition: border .25s;
-}
-
 input[type=submit].button {
 	padding: .6em .8em;
 }
@@ -134,6 +56,11 @@ input[type=checkbox] {
 }
 
 input[type=checkbox] + label {
+	user-select: none;
+	cursor: pointer;
+}
+
+input[type=checkbox] + label:before {
 	display: inline-block;
 	height: 24px;
 	width: 24px;
@@ -141,17 +68,15 @@ input[type=checkbox] + label {
 	margin: 0;
 	margin-left: 24px;
 	margin-right: 16px;
-	background-image: url("/images/ic-checkbox-unchecked.svg");
 	outline: none;
-}
-
-input[type=checkbox]:checked + label {
-	background-image: url("/images/ic-checkbox-checked.svg");
-}
-
-input[type=checkbox] + label {
 	transform: translateY(6px);
-	cursor: pointer;
+
+	@include material-icons;
+	content: 'check_box_outline_blank';
+}
+
+input[type=checkbox]:checked + label:before {
+	content: 'check_box';
 }
 
 input[type=file] {
@@ -194,6 +119,25 @@ input[type=file] + label:hover {
 		"box-shadow",
 		($shadow-full, "accent-outline-fade")
 	);
+}
+
+input[type=range] {
+	@include var("background-color", "normal-focus");
+	@include var(
+		"border",
+		(1px, solid, "normal-outline")
+	);
+
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent;
+	width: 128px;
+	height: 20px;
+	margin: 0;
+	outline: none;
+
+	-webkit-transition: border .25s;
+	-moz-transition: border .25s;
+	transition: border .25s;
 }
 
 input[type=range]:hover {
@@ -249,5 +193,5 @@ input[type=range] + label {
 	padding: 0 .5em;
 	text-align: center;
 	vertical-align: top;
-	line-height: 22px;
+	line-height: 20px;
 }
