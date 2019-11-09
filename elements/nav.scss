@@ -1,4 +1,16 @@
+@import "../global.scss";
+
 .nav {
+	@include var("background", "normal-background-dark");
+	@include var(
+		"border-top",
+		(1px, solid, "normal-outline")
+	);
+	@include var(
+		"box-shadow",
+		("0 0 0.3em", "accent-outline-fade")
+	);
+
 	width: 80% !important;
 	text-align: center;
 	display: block;
@@ -7,22 +19,17 @@
 	overflow: hidden;
 	z-index: 100;
 
-	background: #F5F5F5;
-	background: var(--normal-background-dark);
-	border-top: 1px solid #BDBDBD;
-	border-top: 1px solid var(--normal-outline);
 	height: 48px;
 	height: calc(32px + 1em);
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
-
-	box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.37);
-	box-shadow: 0 0 0.3em var(--accent-outline-fade);
 }
 
 .nav__item {
+	@include var("color", "normal-color-focusable");
+
 	outline: none;
 	border: 1px solid transparent;
 	border-radius: 5px;
@@ -39,8 +46,6 @@
 	box-shadow: none;
 	
 	display: inline-block;
-	color: #808080;
-	color: var(--normal-color-focusable);
 	text-decoration: none;
 	user-select: none;
 	white-space: nowrap;
@@ -52,15 +57,20 @@
 }
 
 .nav__item:hover {
-	color: #000 !important;
-	color: var(--normal-color-focus) !important;
+	@include var(
+		"color",
+		("normal-color-focus", !important)
+	);
 }
 
 .nav__item[selected] {
+	@include var(
+		"color",
+		("accent-color-text", !important)
+	);
+
     transform: translateY(-0.5em);
 	border-color: transparent;
-    color: #0067A4 !important;
-	color: var(--accent-color-text) !important;
 }
 
 .nav__item > * {
@@ -112,9 +122,12 @@
 	}
 
 	.nav__item:hover {
+		@include var(
+			"box-shadow",
+			($shadow-light, "accent-outline-fade")
+		);
+
 	    background-color: rgba(255, 255, 255, 0.2);
-		box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.37);
-		box-shadow: 0 0.1em 0.3em var(--accent-outline-fade);
 	}
 
 	.nav__item:focus {
@@ -122,14 +135,18 @@
 	}
 
 	.nav__item[selected] {
+		@include var("background-color", "accent-background");
+		@include var(
+			"color",
+			("accent-inverse", !important)
+		);
+		@include var(
+			"box-shadow",
+			($shadow-full, "accent-outline-fade2")
+		);
+
 	    width: auto;
 	    transform: none;
-    	background-color: #0091EA;
-    	background-color: var(--accent-background);
-    	color: #FFF !important;
-    	color: var(--accent-inverse) !important;
-    	box-shadow: 0 0.4em 1.2em rgba(0, 72, 117, 0.5);
-    	box-shadow: 0 0.4em 1.2em var(--accent-outline-fade2);
     	border-color: transparent !important;
 	}
 

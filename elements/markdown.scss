@@ -1,13 +1,17 @@
+@import "../global.scss";
+
 .markdown {
 	line-height: 1.8;
 }
 
 .markdown img {
+	@include var("background-color", "normal-focus-dark");
+	@include var(
+		"box-shadow",
+		($shadow, "normal-foucs-dark")
+	);
+
 	border-radius: 5px;
-	box-shadow: 0 0.2em 1.2em rgba(0, 0, 0, 0.3);
-	box-shadow: 0 0.2em 1.2em var(--normal-focus-dark);
-	background-color: rgba(0, 0, 0, 0.3);
-	background-color: var(--normal-focus-dark);
 }
 
 .markdown p>img {

@@ -1,16 +1,22 @@
+@import "../global.scss";
+
 .button {
+	@include var("background-color", "accent-background");
+	@include var(
+		"color",
+		("accent-inverse", !important)
+	);
+	@include var(
+		"box-shadow",
+		($shadow-light, "accent-outline-fade")
+	);
+
 	outline: none;
 	border: 1px solid transparent;
 	border-radius: 5px;
 	user-select: none;
 	cursor: pointer;
 	padding: 0.75em 1.25em;
-	background-color: #0091EA;
-	background-color: var(--accent-background);
-	color: #FFF !important;
-	color: var(--accent-inverse) !important;
-	box-shadow: 0 0.1em 0.3em rgba(0, 72, 117, 0.37);
-	box-shadow: 0 0.1em 0.3em var(--accent-outline-fade);
 
 	transition: box-shadow .25s, background-color .25s, border-color .25s, color .25s;
 	-moz-transition: box-shadow .25s, background-color .25s, border-color .25s, color .25s;
@@ -18,20 +24,25 @@
 }
 
 .button--selectable {
+	@include var(
+		"color",
+		("normal-color-focusable", !important)
+	);
+
 	background-color: rgba(255, 255, 255, 0);
-	color: #808080 !important;
-	color: var(--normal-color-focusable) !important;
 	box-shadow: none;
 }
 
 .button:hover {
-	background-color: #0091EA;
-	background-color: var(--accent-background);
-	color: #FFF !important;
-	color: var(--accent-inverse) !important;
-	box-shadow: 0 0.4em 1.2em rgba(0, 72, 117, 0.37);
-	box-shadow: 0 0.4em 1.2em var(--accent-outline-fade);
-	
+	@include var("background-color", "accent-background");
+	@include var(
+		"color",
+		("accent-inverse", !important)
+	);
+	@include var(
+		"box-shadow",
+		($shadow-full, "accent-outline-fade")
+	);
 }
 
 .button:focus {
@@ -40,19 +51,28 @@
 }
 
 .button--selectable:hover {
+	@include var(
+		"color",
+		("normal-color-focus", !important)
+	);
+	@include var(
+		"box-shadow",
+		($shadow-light, "accent-outline-fade")
+	);
+
 	background-color: rgba(255, 255, 255, 0.2);
-	color: #000 !important;
-	color: var(--normal-color-focus) !important;
-	box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.37);
-	box-shadow: 0 0.1em 0.3em var(--accent-outline-fade);
 }
 
 .button--selectable[selected] {
+	@include var("background-color", "accent-background");
+	@include var(
+		"color",
+		("accent-inverse", !important)
+	);
+	@include var(
+		"box-shadow",
+		($shadow-full, "accent-outline-fade2")
+	);
+
 	border-color: transparent;
-	background-color: #0091EA;
-	background-color: var(--accent-background);
-	color: #FFF !important;
-	color: var(--accent-inverse) !important;
-	box-shadow: 0 0.4em 1.2em rgba(0, 72, 117, 0.5);
-	box-shadow: 0 0.4em 1.2em var(--accent-outline-fade2);
 }

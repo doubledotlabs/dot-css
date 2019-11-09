@@ -1,16 +1,20 @@
+@import "../global.scss";
+
 table {
+	@include var(
+		"border",
+		(1px, solid, "normal-outline")
+	);
+
 	display: inline-block;
 	max-width: 100%;
 	overflow-x: auto;
 	border-collapse: collapse;
-	border: 1px solid #BDBDBD;
-	border: 1px solid var(--normal-outline);
 	border-radius: 5px;
 }
 
 thead {
-	background: #BDBDBD;
-	background: var(--normal-outline);
+	@include var("background", "normal-outline");
 }
 
 th, td {
@@ -20,8 +24,10 @@ th, td {
 }
 
 tr {
-	border-bottom: 1px solid #BDBDBD;
-	border-bottom: 1px solid var(--normal-outline);
+	@include var(
+		"border-bottom",
+		(1px, solid, "normal-outline")
+	);
 }
 
 tr:last-child {

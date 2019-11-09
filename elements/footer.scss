@@ -1,3 +1,5 @@
+@import "../global.scss";
+
 .footer {
     clear: both;
 	margin-left: 10vw;
@@ -10,11 +12,11 @@
 }
 
 .footer__link {
+	@include var("color", "normal-color-text");
+
 	background: none;
 	text-decoration: underline;
 	font-size: .75em;
-	color: #616161;
-	color: var(--normal-color-text);
 }
 
 @media(min-width: 1575px) {

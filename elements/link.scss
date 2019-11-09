@@ -1,3 +1,5 @@
+@import "../global.scss";
+
 .link {
 	background: none;
 	text-decoration: none !important;
@@ -22,16 +24,20 @@
 }
 
 .link__img--round {
+	@include var(
+		"border",
+		(1px, solid, "normal-outline-dark")
+	);
+	@include var(
+		"box-shadow",
+		("0 0 1px 0px", "normal-outline-dark", ",", "0 0 1px 0px", "normal-outline-dark")
+	);
+
 	border-radius: 50%;
-	border: 1px solid #000;
-	border: 1px solid bar(--normal-outline-dark);
-	box-shadow: 0 0 1px 0 #000, 0 0 1px 0 #000;
-	box-shadow: 0 0 1px 0 var(--normal-outline-dark),0 0 1px 0 var(--normal-outline-dark);
 }
 
 .link__img--round {
-	border-color: #808080;
-	border-color: var(--normal-color-focusable);
+	@include var("border-color", "normal-color-focusable");
 
 	transition: border .25s;
 	-moz-transition: border .25s;
@@ -39,8 +45,7 @@
 }
 
 .link:hover .link__img--round {
-	border-color: #000000;
-	border-color: var(--normal-color-focus);
+	@include var("border-color", "normal-color-focus");
 }
 
 .link__img:not(.link__img--round) {
@@ -52,8 +57,7 @@
 }
 
 .link:hover .link__img:not(.link__img--round) {
-	filter: contrast(0) brightness(0);
-	filter: contrast(0) brightness(var(--image-brightness-focus));
+	@include var("filter", "attr-filter-color");
 }
 
 .link__img--color {
@@ -61,8 +65,7 @@
 }
 
 .link__title {
-	color: #808080;
-	color: var(--normal-color-focusable);
+	@include var("color", "normal-color-focusable");
 	
 	transition: color .25s;
 	-moz-transition: color .25s;
@@ -70,6 +73,5 @@
 }
 
 .link:hover .link__title {
-	color: #000;
-	color: var(--normal-color-focus);
+	@include var("color", "normal-color-focus");
 }

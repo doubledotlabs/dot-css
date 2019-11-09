@@ -1,11 +1,13 @@
+@import "../global.scss";
+
 .item {
+	@include var("color", "normal-color-text");
+
 	background: none;
 	display: block;
 	outline: none;
     cursor: pointer;
     text-decoration: none !important;
-    color: #616161;
-    color: var(--normal-color-text);
     margin-bottom: 1em;
     user-select: none;
 
@@ -15,9 +17,9 @@
 }
 
 .item__title {
+	@include var("color", "accent-color-text");
+
 	display: block;
-	color: #0091EA;
-	color: var(--accent-color-text);
 	text-decoration: none;
 
 	transition: color .25s;
@@ -28,16 +30,18 @@
 .item:hover, .item:focus,
 .item:hover .item__title,
 .item:focus .item__title {
-	color: #000;
-	color: var(--normal-color-focus);
+	@include var("color", "normal-color-focus");
 }
 
 .item--box {
+	@include var(
+		"border",
+		(1px, solid, "normal-outline")
+	);
+
 	display: grid;
 	align-content: baseline;
 	padding: 1.5em 16px;
-	border: 1px solid #BDBDBD;
-	border: 1px solid var(--normal-outline);
 	border-radius: 10px;
 
 	transition: color .25s, background-color .25s, border-color .25s, box-shadow .25s;
@@ -57,21 +61,24 @@
 }
 
 .item--box:hover {
-	background-color: rgba(0, 0, 0, 0.03);
-	background-color: var(--normal-focus-light);
-	box-shadow: 0 0.4em 1.2em rgba(0, 72, 117, 0.37);
-	box-shadow: 0 0.4em 1.2em var(--accent-outline-fade);
+	@include var("background-color", "normal-focus-light");
+	@include var("box-shadow", "accent-outline-fade");
 }
 
 .item--box:focus {
-	border: 1px solid #000;
-	border: 1px solid var(--normal-color-focus);
+	@include var(
+		"border",
+		(1px, solid, "normal-color-focus")
+	);
 }
 
 .item--img {
+	@include var(
+		"border",
+		(1px, solid, "normal-outline")
+	);
+
 	margin-bottom: 2em;
-	border: 1px solid #BDBDBD;
-	border: 1px solid var(--normal-outline);
 }
 
 .item--img__title {
@@ -84,10 +91,8 @@
 }
 
 .item--img:hover .item--img__title {
-	background-color: rgba(0, 0, 0, 0.03);
-	background-color: var(--normal-focus-light);
-	color: #000;
-	color: var(--normal-color-focus);
+	@include var("background-color", "normal-focus-light");
+	@include var("color", "normal-color-focus");
 }
 
 .item--img__container,

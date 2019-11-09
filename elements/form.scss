@@ -1,11 +1,17 @@
+@import "../global.scss";
+
 form {
+	@include var("background-color", "normal-background-dark");
+	@include var(
+		"border-top",
+		(1px, solid, "normal-outline")
+	);
+	@include var(
+		"border-bottom",
+		(1px, solid, "normal-outline")
+	);
+
 	padding: 2em 4em;
-	background-color: #F5F5F5;
-	background-color: var(--normal-background-dark);
-	border-top: 1px solid #BDBDBD;
-	border-top: 1px solid var(--normal-outline);
-	border-bottom: 1px solid #BDBDBD;
-	border-bottom: 1px solid var(--normal-outline);
 	width: 100%;
 	text-align: center;
 }
@@ -18,21 +24,24 @@ form.form--wide {
 }
 
 select {
+	@include var("color", "normal-color");
+	@include var(
+		"border",
+		(1px, solid, "normal-outline")
+	);
+
 	display: block;
 	outline: none;
 	padding: 0.4em 0.8em;
 	padding-right: 30px;
 	margin-bottom: 0.8em;
 	min-width: 100%;
-	color: #000;
-	color: var(--normal-color);
-	border: 1px solid #BDBDBD;
-	border: 1px solid var(--normal-outline);
 
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 
+	// TODO: replace with url(.svg)
 	background: linear-gradient(45deg, transparent 50%, #FFF 50%), linear-gradient(135deg, #FFF 50%, transparent 50%), #0091EA;
 	background: linear-gradient(45deg, transparent 50%, var(--normal-color) 50%), linear-gradient(135deg, var(--normal-color) 50%, transparent 50%), var(--normal-background);
   	background-position: calc(100% - 17px) 1em, calc(100% - 12px) 1em;
@@ -45,10 +54,12 @@ select {
 }
 
 select:hover {
-	color: #000;
-	color: var(--normal-color-focus);
-	border: 1px solid #000;
-	border: 1px solid var(--normal-color-focus);
+	@include var("color", "normal-color-focus");
+	@include var(
+		"border",
+		(1px, solid, "normal-color-focus")
+	);
+	
 	box-shadow: none;
 }
 
@@ -57,10 +68,8 @@ select::-ms-expand {
 }
 
 select * {
-	background-color: #FFF;
-	background-color: var(--normal-background);
-	color: #000;
-	color: var(--normal-color-focus);
+	@include var("background-color", "normal-background");
+	@include var("color", "normal-color-focus");
 
 	-webkit-transition: color .25s, background-color .25s;
 	-moz-transition: color .25s, background-color .25s;
@@ -68,23 +77,23 @@ select * {
 }
 
 select *:hover {
-	background-color: #0091EA;
-	background-color: var(--accent-color);
-	color: #FFF;
-	color: var(--accent-inverse);
+	@include var("background-color", "accent-color");
+	@include var("color", "accent-inverse");
 }
 
 input[type=range] {
+	@include var("background-color", "normal-focus");
+	@include var(
+		"border",
+		(1px, solid, "normal-outline")
+	);
+
 	-webkit-appearance: none;
 	-webkit-tap-highlight-color: transparent;
 	width: 128px;
 	height: 20px;
 	margin: 0;
 	border: none;
-	background-color: rgba(0, 0, 0, 0.1);
-	background-color: var(--normal-focus);
-	border: 1px solid rgba(0, 0, 0, 0.25);
-	border: 1px solid var(--normal-outline);
 	outline: none;
 
 	-webkit-transition: border .25s;
@@ -97,13 +106,14 @@ input[type=submit].button {
 }
 
 input[type=text] {
+	@include var(
+		"border",
+		(1px, solid, "normal-outline")
+	);
+	@include var("background-color", "normal-background");
+	@include var("color", "normal-color");
+
 	padding: calc(.6em - 1px) .8em;
-	border: 1px solid #BDBDBD;
-	border: 1px solid var(--normal-outline);
-	background-color: #FFF;
-	background-color: var(--normal-background);
-	color: #000;
-	color: var(--normal-color);
 	outline: none;
 
 	transition: border .25s;
@@ -112,8 +122,10 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-	border: 1px solid #000;
-	border: 1px solid var(--normal-color);
+	@include var(
+		"border",
+		(1px, solid, "normal-color")
+	);
 }
 
 input[type=checkbox] {
@@ -151,17 +163,21 @@ input[type=file] + label {
 }
 
 input[type=file] + label {
+	@include var("background-color", "accent-background");
+	@include var(
+		"color",
+		("accent-inverse", !important)
+	);
+	@include var(
+		"box-shadow",
+		($shadow-light, "accent-outline-fade")
+	);
+	
 	border: none;
 	outline: none;
 	user-select: none;
 	cursor: pointer;
 	padding: 0.75em 1.25em;
-	background-color: #0091EA;
-	background-color: var(--accent-background);
-	color: #FFF !important;
-	color: var(--accent-inverse) !important;
-	box-shadow: 0 0.1em 0.3em rgba(0, 72, 117, 0.37);
-	box-shadow: 0 0.1em 0.3em var(--accent-outline-fade);
 
 	transition: box-shadow .25s, background-color .25s, color .25s;
 	-moz-transition: box-shadow .25s, background-color .25s, color .25s;
@@ -169,17 +185,22 @@ input[type=file] + label {
 }
 
 input[type=file] + label:hover {
-	background-color: #0091EA;
-	background-color: var(--accent-background);
-	color: #FFF !important;
-	color: var(--accent-inverse) !important;
-	box-shadow: 0 0.4em 1.2em rgba(0, 72, 117, 0.37);
-	box-shadow: 0 0.4em 1.2em var(--accent-outline-fade);
+	@include var("background-color", "accent-background");
+	@include var(
+		"color",
+		("accent-inverse", !important)
+	);
+	@include var(
+		"box-shadow",
+		($shadow-full, "accent-outline-fade")
+	);
 }
 
 input[type=range]:hover {
-	border: 1px solid #000;
-	border: 1px solid var(--normal-color);
+	@include var(
+		"border",
+		(1px, solid, "normal-color")
+	);
 }
 
 input[type=range]::-moz-range-track {
@@ -203,17 +224,25 @@ input[type=range]::-ms-tooltip {
 }
 
 input[type=range]::-webkit-slider-thumb {
+	@include var("background-color", "accent-color");
+	@include var(
+		"box-shadow",
+		($shadow-light, "accent-outline-fade")
+	);
+
 	-webkit-appearance: none;
 	width: 24px;
 	height: 20px;
 	border: none;
-	background-color: #0091EA;
-	background-color: var(--accent-color);
-	box-shadow: 0 0.1em 0.3em rgba(0, 72, 117, 0.37);
-	box-shadow: 0 0.1em 0.3em var(--accent-outline-fade);
 }
 
 input[type=range] + label {
+	@include var("background", "normal-background");
+	@include var(
+		"border",
+		(1px, solid, "normal-outline")
+	);
+
 	display: inline-block;
 	height: 20px;
 	min-width: 40px;
@@ -221,8 +250,4 @@ input[type=range] + label {
 	text-align: center;
 	vertical-align: top;
 	line-height: 22px;
-	background: #FFF;
-	background: var(--normal-background);
-	border: 1px solid #BDBDBD;
-	border: 1px solid var(--normal-outline);
 }
