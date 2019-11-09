@@ -1,0 +1,22 @@
+{
+  "name": "dot.css",
+  "version": "1.0.0",
+  "description": "",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doubledotlabs/css.git"
+  },
+  "author": "James Fenn <18jafenn90@gmail.com> (https://jfenn.me/)",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/doubledotlabs/css/issues"
+  },
+  "homepage": "https://github.com/doubledotlabs/css#readme",
+  "devDependencies": {
+    "sass": "^1.23.3"
+  }
+}
