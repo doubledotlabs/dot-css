@@ -14,6 +14,7 @@
 	height: 24px;
 	user-select: none;
 	pointer-events: none;
+	transform: translateY(2px);
 
 	@include material-icons;
 	content: 'arrow_drop_down';
