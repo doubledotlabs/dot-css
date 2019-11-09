@@ -3,6 +3,7 @@ description: "Double Dot Labs stylesheets"
 url: "/dot-css"
 baseurl: "/"
 giturl: "https://github.com/doubledotlabs/css"
+stylesurl: "https://doubledot.dev/css/styles.css"
 
 collections:
     elements:
@@ -16,6 +17,3 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-
-sass:
-    sass_dir: ./dist
