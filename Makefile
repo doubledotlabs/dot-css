@@ -12,4 +12,5 @@ package-install.lock: package.json
 	touch package-install.lock
 
 build: install
-	node_modules/sass/sass.js styles.scss dist.css
+	[ -d dist ] || mkdir dist
+	node_modules/sass/sass.js styles.scss dist/styles.css

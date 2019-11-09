@@ -1,7 +1,5 @@
 .sass-cache/
 _site/
-css/
 node_modules/
+dist/
 package-install.lock
-dist.css
-dist.css.map

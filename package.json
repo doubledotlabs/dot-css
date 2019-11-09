@@ -1,21 +1,28 @@
 {
-  "name": "dot.css",
-  "version": "1.0.0",
+  "name": "@doubledotlabs/dot.css",
+  "version": "0.0.1",
   "description": "",
-  "main": " ",
+  "main": "",
+  "files": [
+    "/dist",
+    "styles.scss",
+    "global.scss",
+    "material-icons.scss",
+    "/elements"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/doubledotlabs/css.git"
+    "url": "git+https://github.com/doubledotlabs/dot-css.git"
   },
-  "author": "James Fenn <18jafenn90@gmail.com> (https://jfenn.me/)",
+  "author": "Double Dot Labs <mail@doubledot.dev> (https://doubledot.dev/)",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/doubledotlabs/css/issues"
+    "url": "https://github.com/doubledotlabs/dot-css/issues"
   },
-  "homepage": "https://github.com/doubledotlabs/css#readme",
+  "homepage": "https://github.com/doubledotlabs/dot-css#readme",
   "devDependencies": {
     "sass": "^1.23.3"
   }
