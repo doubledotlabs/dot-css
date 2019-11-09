@@ -1,74 +1,28 @@
----
----
+@import "global.scss";
 
 * {
-	font-family: 'Miriam Libre', monospace;
+	font-family: $font-body;
 	animation-name: fadeIn;
 	animation-duration: .3s;
 	animation-timing-function: ease-out;
 
-	--normal-color: #424242;
-	--normal-color-text: #616161;
-	--normal-color-focus: #000000;
-	--normal-color-focusable: #808080;
-	--normal-background: #FFFFFF;
-	--normal-background-dark: #F5F5F5;
-	--normal-background-darker: #E0E0E0;
-	--normal-overlay: rgba(255, 255, 255, 0.7);
-	--normal-outline: #BDBDBD;
-	--normal-outline-dark: #000000;
-	--normal-focus: rgba(0, 0, 0, 0.1);
-	--normal-focus-light: rgba(0, 0, 0, 0.03);
-	--normal-focus-dark: rgba(0, 0, 0, 0.3);
-	--accent-color: #0091EA;
-	--accent-color-text: #0067A4;
-	--accent-background-light: rgba(91, 162, 238, 0.3);
-	--accent-background: #0091EA;
-	--accent-background-light: rgba(0, 72, 117, 0.1);
-	--accent-outline: #0091EA;
-	--accent-outline-fade: rgba(0, 72, 117, 0.3);
-	--accent-outline-fade2: rgba(0, 72, 117, 0.5);
-	--accent-inverse: #FFFFFF;
-	--image-brightness-focus: 0;
+	@include theme-vars($theme);
+}
+
+@media (prefers-color-scheme: dark) {
+	* {
+		@include theme-vars($theme-dark);
+	}
 }
 
 .--theme-dark,
 .--theme-dark * {
-	--normal-color: #F5F5F5;
-	--normal-color-text: #BDBDBD;
-	--normal-color-focus: #FFFFFF;
-	--normal-color-focusable: #A8A8A8;
-	--normal-background: #151515;
-	--normal-background-dark: #202020;
-	--normal-background-darker: #252525;
-	--normal-overlay: rgba(0, 0, 0, 0.7);
-	--normal-outline: #424242;
-	--normal-outline-dark: #FFFFFF;
-	--normal-focus: rgba(255, 255, 255, 0.1);
-	--normal-focus-light: rgba(255, 255, 255, 0.03);
-	--normal-focus-dark: rgba(255, 255, 255, 0.3);
-	--accent-color: #09A3FF;
-	--accent-color-text: #58BDF9;
-	--accent-background: #2FA4E9;
-	--accent-background-light: rgba(0, 72, 117, 0.3);
-	--accent-outline: #09A3FF;
-	--accent-outline-fade: rgba(0, 72, 117, 0.3);
-	--accent-outline-fade2: rgba(0, 72, 117, 0.5);
-	--accent-inverse: #000000;
-	--image-brightness-focus: 2;
+	@include theme-vars($theme-dark);
 }
 
 @keyframes fadeIn {
 	from {opacity: 0;}
 	to {opacity: 1;}
-}
-
-.--noanim {
-	animation: none;
-}
-
-.--noanim>* {
-	animation: none;
 }
 
 body {
@@ -87,24 +41,22 @@ body {
 }
 
 p {
-	color: #616161;
-	color: var(--normal-color-text);
+	@include var("color", "normal-color-text");
 }
 
 a {
+	@include var("color", "accent-color-text");
+
 	cursor: pointer;
 	outline: none;
 	text-decoration: underline;
-	color: #0091EA;
-	color: var(--accent-color-text);
 	transition: color .25s;
 	-moz-transition: color .25s;
 	-webkit-transition: color .25s;
 }
 
 a:hover, a:focus {
-	color: #000000;
-	color: var(--normal-color-focus);
+	@include var("color", "normal-color-focus");
 }
 
 a:focus {
@@ -113,8 +65,7 @@ a:focus {
 }
 
 .material-icons.--focusable {
-	color: #808080;
-	color: var(--normal-color-focusable);
+	@include var("color", "normal-color-focusable");
 
 	transition: color .25s;
 	-moz-transition: color .25s;
@@ -122,8 +73,7 @@ a:focus {
 }
 
 .material-icons.--focusable:hover {
-	color: #000000;
-	color: var(--normal-color-focus);
+	@include var("color", "normal-color-focus");
 }
 
 .material-icons.--clickable {
@@ -150,7 +100,23 @@ a:focus {
 @import "elements/link.scss";
 @import "elements/snackbar.scss";
 
+body {
+	margin: 0;
+
+	@include var("background-color", "normal-background-darker");
+	@include var("color", "normal-color");
+
+	word-wrap: break-word;
+	word-break: break-word;
+
+	transition: background-color .25s;
+	-moz-transition: background-color .25s;
+	-webkit-transition: background-color .25s;
+}
+
 main {
+	@include var("background-color", "normal-background");
+
 	display: block;
 	margin-left: 10vw;
 	margin-right: 10vw;

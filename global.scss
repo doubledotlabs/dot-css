@@ -1,0 +1,105 @@
+$box-fixed-x: 4rem;
+$box-fluid-x: 2vw;
+$box-x: calc(#{$box-fixed-x} + #{$box-fluid-x});
+
+$box-fixed-y: .5rem;
+$box-fluid-y: 2vw;
+$box-y: calc(#{$box-fixed-y} + #{$box-fluid-y});
+
+$box-border-size: 2px;
+
+$font-heading: 'Bitter', serif;
+$font-body: 'Titillium Web', monospace;
+
+$shadow-light: 0 0.2em 1.2em;
+$shadow-full: 0 0.4em 1.2em;
+
+$theme: (
+        "normal-color": #272F5B,
+        "normal-color-text": #4E5579,
+		"normal-color-focus": #000000,
+		"normal-color-focusable": #5B6699
+        "normal-background": #E1E2E8,
+        "normal-background-dark": #D0D1D8,
+        "normal-background-darker": #C6C8D1,
+        "normal-overlay": rgba(255, 255, 255, 0.7),
+        "normal-outline": #AFAEBD,
+        "normal-outline-dark": #000000,
+        "normal-focus": rgba(0, 0, 0, 0.1),
+        "normal-focus-light": rgba(0, 0, 0, 0.03),
+        "accent-color": #1D2F87,
+        "accent-color-text": #1D2F87,
+		"accent-background": #1D2F87,
+		"accent-background-light": rgba(91, 102, 153, 0.1),
+        "accent-outline": #4857A7,
+        "accent-outline-fade": rgba(91, 102, 153, 0.3),
+        "accent-outline-fade2": rgba(91, 102, 153, 0.5),
+        "accent-inverse": #FFFFFF,
+        "attr-filter-color": contrast(0) brightness(0)
+);
+
+$theme-dark: (
+        "normal-color": #F9FCFA,
+        "normal-color-text": #AFAEBD,
+        "normal-color-focus": #FFFFFF,
+        "normal-color-focusable": #96D8D3,
+        "normal-background": #2E2651,
+        "normal-background-dark": #241E40,
+        "normal-background-darker": #1B1630,
+        "normal-overlay": rgba(0, 0, 0, 0.7),
+        "normal-outline": #7B6EB2,
+        "normal-outline-dark": #FFFFFF,
+        "normal-focus": rgba(255, 255, 255, 0.1),
+        "normal-focus-light": rgba(255, 255, 255, 0.03),
+        "accent-color": #00EAC0,
+        "accent-color-text": #00EAC0,
+        "accent-background": #00EAC0,
+        "accent-background-light": rgba(150, 216, 211, 0.3),
+        "accent-outline": #00EAC0,
+        "accent-outline-fade": rgba(150, 216, 211, 0.3),
+        "accent-outline-fade2": rgba(150, 216, 211, 0.5),
+        "accent-inverse": #000000,
+        "attr-filter-color": contrast(0) brightness(2)
+
+);
+
+@mixin theme-vars($t) {
+  @each $key, $value in $t {
+    --#{$key}: #{$value};
+  }
+}
+
+@function var-defaults($keys, $separator: space) {
+  $list: ();
+
+  @each $key in $keys {
+    @if map-has-key($theme, $key) {
+      $list: append($list, #{map-get($theme, $key)}, $separator: $separator);
+    }
+    @else {
+      $list: append($list, $key, $separator: $separator);
+    }
+  }
+
+  @return $list;
+}
+
+@function var-values($keys, $separator: space) {
+  $list: ();
+
+  @each $key in $keys {
+    @if map-has-key($theme, $key) {
+      $list: append($list, var(--#{$key}), $separator: $separator);
+    }
+    @else {
+      $list: append($list, $key, $separator: $separator);
+    }
+  }
+
+  @return $list;
+}
+
+@mixin var($attr, $keys, $separator: space) {
+  #{$attr}: var-defaults($keys);
+  #{$attr}: var-values($keys);
+}
