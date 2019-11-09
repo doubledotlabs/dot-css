@@ -1,57 +1,57 @@
 @import "material-icons.scss";
 
-$box-fixed-x: 4rem;
-$box-fluid-x: 2vw;
-$box-x: calc(#{$box-fixed-x} + #{$box-fluid-x});
+$box-fixed-x: 4rem !default;
+$box-fluid-x: 2vw !default;
+$box-x: calc(#{$box-fixed-x} + #{$box-fluid-x}) !default;
 
-$box-fixed-y: .5rem;
-$box-fluid-y: 2vw;
-$box-y: calc(#{$box-fixed-y} + #{$box-fluid-y});
+$box-fixed-y: .5rem !default;
+$box-fluid-y: 2vw !default;
+$box-y: calc(#{$box-fixed-y} + #{$box-fluid-y}) !default;
 
-$box-border-size: 2px;
+$box-border-size: 2px !default;
 
-$font-heading: 'Bitter', serif;
-$font-body: 'Titillium Web', monospace;
-$font-code: 'Roboto Mono', monospace;
+$font-heading: 'Bitter', serif !default;
+$font-body: 'Titillium Web', monospace !default;
+$font-code: 'Roboto Mono', monospace !default;
 
-$shadow-light: 0 0.1em 0.3em;
-$shadow: 0 0.2em 1.2em;
-$shadow-full: 0 0.4em 1.2em;
+$shadow-light: 0 0.1em 0.3em !default;
+$shadow: 0 0.2em 1.2em !default;
+$shadow-full: 0 0.4em 1.2em !default;
 
 $theme: (
-        "normal-color": #272F5B,
-        "normal-color-text": #4E5579,
+        "normal-color": #101010,
+        "normal-color-text": #424242,
 		"normal-color-focus": #000000,
-		"normal-color-focusable": #5B6699,
+		"normal-color-focusable": #616161,
         "normal-background": #E1E2E8,
         "normal-background-dark": #D0D1D8,
         "normal-background-darker": #C6C8D1,
         "normal-overlay": rgba(255, 255, 255, 0.7),
-        "normal-outline": #AFAEBD,
+        "normal-outline": #BDBDBD,
         "normal-outline-dark": #000000,
         "normal-focus": rgba(0, 0, 0, 0.1),
         "normal-focus-light": rgba(0, 0, 0, 0.03),
-        "accent-color": #1D2F87,
-        "accent-color-text": #1D2F87,
-		"accent-background": #1D2F87,
+        "accent-color": #007bff,
+        "accent-color-text": #005ab9,
+		"accent-background": #004fa3,
 		"accent-background-light": rgba(91, 102, 153, 0.1),
-        "accent-outline": #4857A7,
+        "accent-outline": #0050a7,
         "accent-outline-fade": rgba(91, 102, 153, 0.3),
         "accent-outline-fade2": rgba(91, 102, 153, 0.5),
         "accent-inverse": #FFFFFF,
         "attr-filter-color": contrast(0) brightness(0)
-);
+) !default;
 
 $theme-dark: (
-        "normal-color": #F9FCFA,
-        "normal-color-text": #AFAEBD,
+        "normal-color": #FAFAFA,
+        "normal-color-text": #E0E0E0,
         "normal-color-focus": #FFFFFF,
-        "normal-color-focusable": #96D8D3,
-        "normal-background": #2E2651,
-        "normal-background-dark": #241E40,
-        "normal-background-darker": #1B1630,
+        "normal-color-focusable": #BDBDBD,
+        "normal-background": #303030,
+        "normal-background-dark": #212121,
+        "normal-background-darker": #101010,
         "normal-overlay": rgba(0, 0, 0, 0.7),
-        "normal-outline": #7B6EB2,
+        "normal-outline": #424242,
         "normal-outline-dark": #FFFFFF,
         "normal-focus": rgba(255, 255, 255, 0.1),
         "normal-focus-light": rgba(255, 255, 255, 0.03),
@@ -65,7 +65,7 @@ $theme-dark: (
         "accent-inverse": #000000,
         "attr-filter-color": contrast(0) brightness(2)
 
-);
+) !default;
 
 @mixin theme-vars($t) {
   @each $key, $value in $t {
