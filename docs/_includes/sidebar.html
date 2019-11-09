@@ -1,0 +1,21 @@
+<sidebar class="sidebar">
+	<h2>Index</h2>
+	<ul>
+		{% for category in site.categories %}
+		<li>
+			<a href="{{ site.baseurl }}{{ category.id }}">{{ category.title }}</a>
+			<ul>
+				{% assign elements = site.elements | where: "category", category.title %}
+				{% for element in elements %}
+				<li><a href="{{ site.baseurl }}{{ element.id }}">{{ element.title }}</a></li>
+				{% endfor %}
+			</ul>
+		</li>
+		{% endfor %}
+
+		{% assign elements = site.elements | where_exp: "item", "item.category == nil" %}
+		{% for element in elements %}
+			<li><a href="{{ site.baseurl }}{{ element.id }}">{{ element.title }}</a></li>
+		{% endfor %}
+	</ul>
+</sidebar>

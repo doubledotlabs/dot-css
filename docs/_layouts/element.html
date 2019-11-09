@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% include sidebar.html %}
+
+<main>
+	{% if page.category %}
+	{% assign category = site.categories | where: "title", page.category | first %}
+	<a class="link" href="{{ site.baseurl }}{{ category.id }}">
+		<img class="link__img" src="/images/ic/back.svg">
+		<span class="link__title">"{{ page.category }}" Category</span>
+	</a>
+	{% else %}
+	<a class="link" href="{{ site.baseurl }}">
+		<img class="link__img" src="/images/ic/back.svg">
+		<span class="link__title">Back</span>
+	</a>
+	{% endif %}
+	<h1>{{ page.title }}</h1>
+	<p>{{ page.description }}</p>
+	<h2 id="demo">Demo</h2>
+	<div>{{ page.content }}</div>
+	<h2 id="code">Code</h2>
+	<pre><code class="html">{{ page.content | xml_escape }}</code></pre>
+	<a class="link" href="{{ site.giturl }}/blob/css/{{ category.file | default: page.file }}">
+		<i class="link__img material-icons">code</i>
+		<span class="link__title">View Source CSS</span>
+	</a>
+</main>

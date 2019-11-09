@@ -1,0 +1,21 @@
+name: "dot.css"
+description: "Double Dot Labs stylesheets"
+url: "/dot-css"
+baseurl: "/"
+giturl: "https://github.com/doubledotlabs/css"
+
+collections:
+    elements:
+        output: true
+    categories:
+        output: true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+
+sass:
+    sass_dir: ./dist
