@@ -75,3 +75,32 @@
 .link:hover .link__title {
 	@include var("color", "normal-color-focus");
 }
+
+.link--chip {
+	display: inline-flex;
+	border-radius: 1.5em;
+	padding: .25em 1.25em;
+	margin-right: 0.5em;
+
+	@include var("background-color", "normal-background-darker");
+
+	transition: box-shadow .25s;
+	-moz-transition: box-shadow .25s;
+	-webkit-transition: box-shadow .25s;
+}
+
+.link--chip:hover {
+	@include var(
+		"box-shadow",
+		($shadow-light, "accent-outline-fade2")
+	);
+}
+
+.link--chip * {
+	@include var("color", "normal-color-text");
+}
+
+.link--chip .link__img {
+	margin-right: 8px;
+	margin-left: -2px;
+}
