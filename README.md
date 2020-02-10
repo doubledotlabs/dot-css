@@ -15,7 +15,8 @@ You can install dot.css as an [NPM module](https://www.npmjs.com/package/@double
 npm install @doubledotlabs/dot.css
 ```
 
-This provides the SCSS files at `node_modules/@doubledotlabs/dot.css/styles.scss`.
+This provides the SCSS files at `node_modules/@doubledotlabs/dot.css/styles.scss`. You can `@import` this file into
+another SCSS file to set custom variables and integrate it with your site's build process.
 
 ### CDN
 
@@ -23,6 +24,16 @@ If you do not need to customize the CSS, you can include the compiled CSS in you
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@doubledotlabs/dot.css@0.0.1/dist/styles.css">
+```
+
+## Icons
+
+These styles support the `.material-icons` web font, which can be used on your site using their
+[installation instructions](https://google.github.io/material-design-icons/#setup-method-1-using-via-google-web-fonts),
+or by copying the snippet below:
+
+```html
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 ```
 
 ## License
