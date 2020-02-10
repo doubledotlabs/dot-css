@@ -62,7 +62,10 @@
 
 .item--box:hover {
 	@include var("background-color", "normal-focus-light");
-	@include var("box-shadow", "accent-outline-fade");
+	@include var(
+		"box-shadow",
+		($shadow-full, "accent-outline-fade")
+	);
 }
 
 .item--box:focus {
