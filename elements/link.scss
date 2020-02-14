@@ -81,6 +81,7 @@
 	border-radius: 1.5em;
 	padding: .25em 1.25em;
 	margin-right: 0.5em;
+	min-height: 2.5em;
 
 	@include var(
 		"border",
