@@ -2,8 +2,6 @@
 layout: default
 ---
 
-{% include sidebar.html %}
-
 <main class="container">
 	{% if page.category %}
 	{% assign category = site.categories | where: "title", page.category | first %}

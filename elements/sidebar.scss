@@ -1,5 +1,8 @@
 @import "../global.scss";
 
+$sidebar-width: calc(20% + 64px) !default;
+$sidebar-width-fixed: 560px !default;
+
 .sidebar {
 	@include var("background-color", "normal-background-dark");
 	@include var(
@@ -55,10 +58,9 @@
 	opacity: 0;
 }
 
-@media(min-width: 800px) {
-	.sidebar ~ main,
-	.sidebar ~ .footer {
-		width: calc(70% - 20vw);
+@media(min-width: $breakpoint-xl) {
+	.sidebar__container {
+		padding-right: $sidebar-width;
 	}
 	
 	.sidebar {
@@ -68,7 +70,7 @@
 		);
 
 		position: fixed;
-		width: calc(30% - 4em);
+		width: $sidebar-width;
 		right: 0;
 		top: 0;
 		bottom: 0;
@@ -80,39 +82,5 @@
 
 	.sidebar::before {
 		display: none;
-	}
-	
-}
-
-@media(min-width: 1575px) {
-	.sidebar ~ main,
-	.sidebar ~ .footer {
-		width: calc(882px);
-	}
-
-	.sidebar {
-		width: calc(20% - 4em);
-	}
-}
-
-@media(min-width: 2800px) {
-	.sidebar ~ main,
-	.sidebar ~ .footer {
-		width: auto;
-	}
-
-	.sidebar {
-		@include var(
-			"border",
-			(1px, solid, "normal-outline")
-		);
-
-		width: 560px;
-		height: auto;
-		position: absolute;
-		top: 10em;
-		bottom: auto;
-		border-radius: 10px;
-		right: calc(50vw - 1190px - 6em);
 	}
 }

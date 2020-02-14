@@ -1,5 +1,10 @@
 @import "material-icons.scss";
 
+$breakpoint-sm: 576px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 992px !default;
+$breakpoint-xl: 1368px !default;
+
 $box-fixed-x: 4rem !default;
 $box-fluid-x: 2vw !default;
 $box-x: calc(#{$box-fixed-x} + #{$box-fluid-x}) !default;
