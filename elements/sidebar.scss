@@ -84,3 +84,34 @@ $sidebar-width-fixed: 560px !default;
 		display: none;
 	}
 }
+
+@media(min-width: $breakpoint-xxl) {
+	.sidebar__container {
+		padding-right: 0;
+	}
+
+	.sidebar {
+		@include var(
+			"border",
+			(1px, solid, "normal-outline")
+		);
+
+		width: $sidebar-width-fixed;
+		height: auto;
+		position: absolute;
+		top: 2em;
+		left: calc(50% + 514px);
+		bottom: auto;
+		border-radius: 10px;
+	}
+}
+
+@media print {
+	.sidebar, .sidebar::before {
+		display: none;
+	}
+
+	.sidebar__container {
+		padding-right: 0;
+	}
+}

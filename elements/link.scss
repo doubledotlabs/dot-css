@@ -105,3 +105,9 @@
 	margin-right: 8px;
 	margin-left: -2px;
 }
+
+@media print {
+	.link {
+		display: none;
+	}
+}
