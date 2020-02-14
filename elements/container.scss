@@ -1,0 +1,11 @@
+.container {
+	display: block;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+@media(max-width: 1000px) {
+	.container {
+		margin: 0 5vw;
+	}
+}

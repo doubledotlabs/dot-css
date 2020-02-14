@@ -15,6 +15,11 @@
 	}
 }
 
+.--theme-light,
+.--theme-light * {
+	@include theme-vars($theme);
+}
+
 .--theme-dark,
 .--theme-dark * {
 	@include theme-vars($theme-dark);
@@ -104,6 +109,7 @@ a:focus {
 @import "elements/img.scss";
 @import "elements/link.scss";
 @import "elements/snackbar.scss";
+@import "elements/container.scss";
 
 body {
 	margin: 0;
@@ -119,23 +125,7 @@ body {
 	-webkit-transition: background-color .25s;
 }
 
-main {
-	display: block;
-	margin-left: 10vw;
-	margin-right: 10vw;
-	margin-bottom: 2em;
-	padding-top: 2em;
-	
-	transition: transform .25s;
-	-moz-transition: transform .25s;
-	-webkit-transition: transform .25s;
-}
-
 @media(max-width: 599px) {
-	main {
-		padding-top: 16px;
-	}
-
 	.--desktop {
 		display: none;
 	}
@@ -145,11 +135,4 @@ main {
     .--desktop-large {
         display: none;
     }
-}
-
-@media(min-width: 1575px) {
-	main {
-		margin-left: calc(50vw - 630px);
-		margin-right: calc(50vw - 630px);
-	}
 }

@@ -2,8 +2,6 @@
 
 .footer {
     clear: both;
-	margin-left: 10vw;
-	margin-right: 10vw;
 	margin-bottom: 8em;
 	
 	transition: transform .25s;
@@ -17,11 +15,4 @@
 	background: none;
 	text-decoration: underline;
 	font-size: .75em;
-}
-
-@media(min-width: 1575px) {
-	.footer {
-		margin-left: calc(50vw - 630px);
-		margin-right: calc(50vw - 630px);
-	}
 }

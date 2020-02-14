@@ -4,7 +4,7 @@ layout: default
 
 {% include sidebar.html %}
 
-<main>
+<main class="container">
 	{% if page.category %}
 	{% assign category = site.categories | where: "title", page.category | first %}
 	<a class="link" href="{{ site.baseurl }}{{ category.id }}">
