@@ -6,9 +6,20 @@ description: "A navigation layout uses a set of selectable buttons to act as a t
 ---
 
 <nav class="nav">
-	<button class="button button--selectable nav__item" selected>Homepage</button>
-	<button class="button button--selectable nav__item">Page 1</button>
-	<button class="button button--selectable nav__item">Page 2</button>
-	<button class="button button--selectable nav__item">Page 3</button>
-	<button class="button button--selectable nav__item">Page 4</button>
+	<a class="nav__item" selected>
+		<i class="nav__item__icon material-icons">home</i>
+		<span class="nav__item__title">Homepage</span>
+	</a>
+	<a class="nav__item">
+		<i class="nav__item__icon material-icons">notes</i>
+		<span class="nav__item__title">Blog</span>
+	</a>
+	<a class="nav__item">
+		<i class="nav__item__icon material-icons">code</i>
+		<span class="nav__item__title">Projects</span>
+	</a>
+	<a class="nav__item">
+		<i class="nav__item__icon material-icons">info</i>
+		<span class="nav__item__title">About</span>
+	</a>
 </nav>

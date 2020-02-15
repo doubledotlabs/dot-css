@@ -58,7 +58,7 @@ $sidebar-width-fixed: 560px !default;
 	opacity: 0;
 }
 
-@media(min-width: $breakpoint-xl) {
+@media(min-width: $breakpoint-md) {
 	.sidebar__container {
 		padding-right: $sidebar-width;
 	}

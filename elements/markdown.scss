@@ -8,7 +8,7 @@
 	@include var("background-color", "normal-focus-dark");
 	@include var(
 		"box-shadow",
-		($shadow, "normal-foucs-dark")
+		($shadow, "normal-focus-dark")
 	);
 
 	border-radius: 5px;
