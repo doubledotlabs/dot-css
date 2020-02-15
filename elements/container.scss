@@ -13,5 +13,6 @@ $container-breakpoint: $breakpoint-xl !default;
 @media(max-width: $container-breakpoint) {
 	.container {
 		margin: 0 5vw;
+		max-width: unset;
 	}
 }
