@@ -20,10 +20,10 @@ another SCSS file to set custom variables and integrate it with your site's buil
 
 ### CDN
 
-If you do not need to customize the CSS, you can include the compiled CSS in your HTML using [UNPKG](https://unpkg.com/browse/@doubledotlabs/dot.css@0.0.1/):
+If you do not need to customize the CSS, you can include the compiled CSS in your HTML using [UNPKG](https://unpkg.com/browse/@doubledotlabs/dot.css/):
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@doubledotlabs/dot.css@0.0.6/dist/styles.css">
+<link rel="stylesheet" href="https://unpkg.com/@doubledotlabs/dot.css@{version}/dist/styles.css">
 ```
 
 ## Icons

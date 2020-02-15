@@ -1,0 +1,49 @@
+@import "../../global.scss";
+
+input[type=checkbox] {
+	height: 0;
+    width: 0;
+    margin: 0;
+	opacity: 0;
+	outline: none;
+}
+
+input[type=checkbox] + label {
+	@include var("color", "normal-color-text");
+
+	user-select: none;
+	cursor: pointer;
+
+	transition: color .25s;
+	-moz-transition: color .25s;
+	-webkit-transition: color .25s;
+}
+
+input[type=checkbox] + label:before {
+	@include var("color", "normal-color-text");
+
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	padding: 0;
+	margin: 0;
+	margin-right: 8px;
+	outline: none;
+	transform: translateY(6px);
+
+	@include material-icons;
+	content: 'check_box_outline_blank';
+
+	transition: color .25s;
+	-moz-transition: color .25s;
+	-webkit-transition: color .25s;
+}
+
+input[type=checkbox]:focus + label, input[type=checkbox]:focus + label:before {
+	@include var("color", "normal-color");
+}
+
+input[type=checkbox]:checked + label:before {
+	@include var("color", "accent-color");
+	content: 'check_box';
+}

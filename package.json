@@ -23,7 +23,9 @@
     "url": "https://github.com/doubledotlabs/dot-css/issues"
   },
   "homepage": "https://github.com/doubledotlabs/dot-css#readme",
-  "devDependencies": {
-    "sass": "^1.23.3"
+  "devDependencies": {},
+  "dependencies": {
+    "node-sass": "^4.13.1",
+    "node-sass-glob-importer": "^5.3.2"
   }
 }

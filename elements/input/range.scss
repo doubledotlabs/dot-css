@@ -1,0 +1,83 @@
+@import "../../global.scss";
+
+input[type=range] {
+	@include var("background-color", "normal-focus");
+	@include var(
+		"border",
+		(1px, solid, "normal-outline")
+	);
+
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent;
+	width: 128px;
+	height: 22px;
+	margin: 0;
+	outline: none;
+
+	-webkit-transition: border .25s;
+	-moz-transition: border .25s;
+	transition: border .25s;
+}
+
+input[type=range]::-moz-range-track {
+	border: none;
+	background: transparent;
+}
+
+input[type=range]::-ms-track {
+	border: inherit;
+	color: transparent;
+	background: transparent;
+}
+
+input[type=range]::-ms-fill-lower,
+input[type=range]::-ms-fill-upper {
+	background: transparent;
+}
+
+input[type=range]::-ms-tooltip {
+	display: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	@include var("background-color", "accent-color");
+	@include var(
+		"box-shadow",
+		($shadow-light, "accent-outline-fade")
+	);
+
+	-webkit-appearance: none;
+	width: 24px;
+	height: 20px;
+	border: none;
+}
+
+input[type=range] + label {
+	@include var("color", "normal-color-text");
+	@include var("background", "normal-background");
+	@include var(
+		"border",
+		(1px, solid, "normal-outline")
+	);
+
+	display: inline-block;
+	height: 22px;
+	min-width: 40px;
+	padding: 0 .5em;
+	text-align: center;
+	vertical-align: top;
+	line-height: 20px;
+
+	transition: border .25s, color .25s;
+}
+
+input[type=range]:focus + label {
+	@include var("color", "normal-color");
+}
+
+input[type=range]:focus, input[type=range]:focus + label {
+	@include var(
+		"border",
+		(1px, solid, "normal-color")
+	);
+}

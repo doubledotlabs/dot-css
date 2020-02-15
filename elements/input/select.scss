@@ -1,11 +1,6 @@
-@import "../global.scss";
+@import "../../global.scss";
 
-.select {
-	display: inline-block;
-	position: relative;
-}
-
-.select::after {
+.input--select::after {
 	display: block;
 	position: absolute;
 	bottom: 15px;
@@ -20,15 +15,6 @@
 	content: 'arrow_drop_down';
 }
 
-.select__title {
-	display: block;
-	margin: 0;
-	margin-bottom: .2em;
-	padding: 0;
-	font-size: .8em;
-	font-weight: bolder;
-}
-
 select::-ms-expand {
 	display: none;
 }
@@ -38,7 +24,7 @@ select {
     @include var("color", "normal-color-text");
     @include var(
         "border",
-        (1px, solid, "accent-color-text")
+        (1px, solid, "normal-outline")
     );
     
 	width: 200px;
@@ -53,12 +39,20 @@ select {
 	-moz-appearance: none;
 	appearance: none;
 
-	transition: background-color .25s, color .25s;
+	transition: border .25s, color .25s;
+	-moz-transition: border .25s, color .25s;
+	-webkit-transition: border .25s, color .25s;
 }
 
 select:hover, select:focus {
-	@include var("background-color", "normal-background-dark");
 	@include var("color", "normal-color");
+}
+
+select:focus {
+	@include var(
+        "border",
+        (1px, solid, "normal-color")
+    );
 }
 
 option {

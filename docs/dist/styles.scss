@@ -2,5 +2,5 @@
 ---
 
 {% if site.build == "dev" %}
-@import "../../styles.scss";
+@import "../../dist/styles";
 {% endif %}

@@ -1,0 +1,31 @@
+@import "../../global.scss";
+
+input[type=text], textarea {
+	@include var(
+		"border",
+		(1px, solid, "normal-outline")
+	);
+	@include var("background-color", "normal-background");
+	@include var("color", "normal-color");
+
+	padding: calc(.6em - 1px) .8em;
+	outline: none;
+
+	transition: border .25s;
+	-moz-transition: border .25s;
+	-webkit-transition: border .25s;
+}
+
+input[type=text]:focus, textarea:focus {
+	@include var(
+		"border",
+		(1px, solid, "normal-color")
+	);
+}
+
+textarea {
+	min-width: 96px;
+	max-width: 100%;
+    min-height: 2.6em;
+    max-height: 50vh;
+}
