@@ -104,7 +104,11 @@ a:focus {
 @import "elements/table.scss";
 @import "elements/tabs.scss";
 @import "elements/code.scss";
-@import "elements/input/*";
+@import "elements/input/input.scss";
+@import "elements/input/checkbox.scss";
+@import "elements/input/range.scss";
+@import "elements/input/select.scss";
+@import "elements/input/text.scss";
 @import "elements/form.scss";
 @import "elements/layout.scss";
 @import "elements/sidebar.scss";
