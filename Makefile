@@ -14,3 +14,8 @@ package-install.lock: package.json
 build: install
 	[ -d dist ] || mkdir dist
 	npx node-sass --importer node_modules/node-sass-glob-importer/dist/cli.js styles.scss > dist/styles.css
+
+serve: install
+	npx node-sass --importer node_modules/node-sass-glob-importer/dist/cli.js styles.scss -o docs/dist -w \
+		& (cd docs/; jekyll serve --config _config.yml,_config-dev.yml)
+		

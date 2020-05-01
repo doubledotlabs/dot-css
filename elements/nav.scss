@@ -1,29 +1,15 @@
 @import "../global.scss";
 
 .nav {
-	@include var("background", "normal-background-dark");
-	@include var(
-		"border-top",
-		(1px, solid, "normal-outline")
-	);
-	@include var(
-		"box-shadow",
-		("0 0 0.3em", "accent-outline-fade")
-	);
+	border: none;
+	position: unset;
+	display: block;
+	height: auto;
+	background: none;
+	overflow: visible;
+	box-shadow: none;
 
 	text-align: center;
-	display: block;
-	display: flex;
-	padding: 8px 10%;
-	overflow: hidden;
-	z-index: 100;
-
-	height: 48px;
-	height: calc(48px + 1em);
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
 }
 
 .nav__item {
@@ -34,9 +20,10 @@
 	border-radius: 5px;
 	user-select: none;
 	cursor: pointer;
-	padding: 4px 8px;
+	padding: 0.75em 1.25em;
+	margin: 4px;
 
-    will-change: color, transform;
+	will-change: color, transform;
 	transition: box-shadow .25s, background-color .25s, border-color .25s, color .25s, transform .25s;
 	-moz-transition: box-shadow .25s, background-color .25s, border-color .25s, color .25s, transform .25s;
 	-webkit-transition: box-shadow .25s, background-color .25s, border-color .25s, color .25s, transform .25s;
@@ -48,11 +35,6 @@
 	text-decoration: none;
 	user-select: none;
 	white-space: nowrap;
-
-	height: 100%;
-	width: 18%;
-	position: relative;
-	flex-grow: 1;
 }
 
 .nav__item:hover {
@@ -60,109 +42,137 @@
 		"color",
 		("normal-color-focus", !important)
 	);
+	@include var(
+		"box-shadow",
+		($shadow-light, "accent-outline-fade")
+	);
+
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav__item:focus {
+	border-color: currentColor;
 }
 
 .nav__item[selected] {
+	@include var("background-color", "accent-background");
 	@include var(
 		"color",
-		("accent-color-text", !important)
+		("accent-inverse", !important)
+	);
+	@include var(
+		"box-shadow",
+		($shadow-full, "accent-outline-fade2")
 	);
 
-    transform: translateY(-0.5em);
-	border-color: transparent;
+	width: auto;
+	transform: none;
+	border-color: transparent !important;
 }
 
 .nav__item > * {
 	display: block;
+	margin: 0;
 	vertical-align: middle;
-	text-align: center;
 }
 
 .nav__item__icon {
-	margin: 4px;
+	margin-right: 0;
+	margin-bottom: 0.25em;
 }
 
 .nav__item__title {
-    font-size: 0;
-    height: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
-    will-change: font-size;
-    transition: font-size .25s;
-    -moz-transition: font-size .25s;
-    -webkit-transition: font-size .25s;
+	font-size: 1em !important;
 }
 
-.nav__item[selected] > .nav__item__title {
-    font-size: 0.9em;
-    height: auto;
-}
-
-@media(min-width: 600px) {
-    .nav {
-        border: none;
-        position: unset;
-        display: block;
-        height: auto;
-        background: none;
-        overflow: visible;
-        box-shadow: none;
-    }
-    
+@media(max-width: 600px) {
 	.nav__item {
-		width: auto;
-		height: auto;
-		text-align: inherit;
-		padding: 0.75em 1.25em;
-		transform: none;
-		margin: 4px;
+		display: block;
+		text-align: left;
+
+		* {
+			display: inline;
+		}
+
+		.nav__item__icon {
+			margin-right: .5em;
+		}
 	}
 
-	.nav__item:hover {
+    .nav--mobile-bar {
+		@include var("background", "normal-background-dark");
 		@include var(
-			"box-shadow",
-			($shadow-light, "accent-outline-fade")
-		);
-
-	    background-color: rgba(255, 255, 255, 0.2);
-	}
-
-	.nav__item:focus {
-	    border-color: currentColor;
-	}
-
-	.nav__item[selected] {
-		@include var("background-color", "accent-background");
-		@include var(
-			"color",
-			("accent-inverse", !important)
+			"border-top",
+			(1px, solid, "normal-outline")
 		);
 		@include var(
 			"box-shadow",
-			($shadow-full, "accent-outline-fade2")
+			("0 0 0.3em", "accent-outline-fade")
 		);
+	
+		display: block;
+		display: flex;
+		padding: 8px 10%;
+		overflow: hidden;
+		z-index: 100;
+	
+		height: 48px;
+		height: calc(48px + 1em);
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
 
-	    width: auto;
-	    transform: none;
-    	border-color: transparent !important;
-	}
+		.nav__item {
+			padding: 4px 8px;
+			margin: 0;
+			text-align: center;
+		
+			height: 100%;
+			width: 18%;
+			position: relative;
+			flex-grow: 1;
+		}
+		
+		.nav__item:hover {
+			box-shadow: none;
+			background: none;
+		}
+		
+		.nav__item[selected] {
+			@include var(
+				"color",
+				("accent-color-text", !important)
+			);
+		
+			transform: translateY(-0.5em);
+			border-color: transparent;
+		}
+		
+		.nav__item[selected] > .nav__item__title {
+			font-size: 0.9em;
+			height: auto;
+		}
 
-	.nav__item > * {
-		margin: 0;
-		vertical-align: middle;
-	}
-
-	.nav__item__icon {
-		margin-right: 0 !important;
-		margin-bottom: 0.25em;
-	}
-
-	.nav__item__title {
-	    font-size: 1em !important;
-	    height: auto;
-	    position: unset;
-	    transform: none;
+		.nav__item > * {
+			text-align: center;
+		}
+		
+		.nav__item__icon {
+			margin: 4px;
+		}
+		
+		.nav__item__title {
+			font-size: 0;
+			height: 0;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		
+			will-change: font-size;
+			transition: font-size .25s;
+			-moz-transition: font-size .25s;
+			-webkit-transition: font-size .25s;
+		}
 	}
 }
