@@ -1,0 +1,46 @@
+@import "../../global.scss";
+
+.input {
+	display: inline-block;
+	position: relative;
+	margin: 0.5rem 0;
+
+	&> .input__title, &> label {
+		display: block;
+		margin: 0;
+		margin-bottom: .2em;
+		padding: 0;
+		font-size: .8em;
+		font-weight: bolder;
+
+		@include var("color", "secondary");
+
+		transition: color .25s;
+	}
+
+	&:focus-within > .input__title,
+	&:focus-within > label {
+		@include var("color", "primary");
+	}
+}
+
+@mixin input {
+	@include var("border", (1px, solid, "tertiary"));
+	@include var("background-color", "light");
+	@include var("color", "primary");
+
+	padding: calc(.6em - 1px) .8em;
+	outline: none;
+	appearance: none;
+	-webkit-appearance: none;
+
+	transition: border .25s;
+
+	&:focus {
+		border-color: currentColor;
+	}
+}
+
+input[type=text], textarea {
+	@include input;
+}

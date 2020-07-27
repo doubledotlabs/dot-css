@@ -42,14 +42,17 @@ $theme: (
 ) !default;
 
 $theme-dark: (
+	"lighter": #424242,
+	"light": #303030,
+	"neutral": #212121,
+	"dark": #151515,
+	"darker": #101010,
 	"primary": #FAFAFA,
 	"on-primary": #616161,
 	"secondary": #E0E0E0,
 	"on-secondary": #424242,
 	"tertiary": #616161,
 	"on-tertiary": #616161,
-	"surface": #212121,
-	"on-surface": #FAFAFA,
 	"accent": #00EAC0,
 	"on-accent": #000000,
 	"highlight": #00EAC0,
@@ -58,8 +61,6 @@ $theme-dark: (
 	"danger": #dc3545,
 	"warning": #ffc107,
 	"info": #17a2b8,
-	"light": "#FAFAFA",
-	"dark": #101010,
 	"white": "#FFFFFF",
 	"black": "#000000",
     "attr-filter-color": contrast(0) brightness(2)

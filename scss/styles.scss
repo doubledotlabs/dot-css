@@ -8,6 +8,7 @@
 
 @import "utilities/colors";
 @import "utilities/shadows";
+@import "utilities/material-icons";
 
 * {
 	font-family: $font-body;
@@ -35,11 +36,13 @@
 }
 
 @import "base";
+@import "elements/form/input";
+@import "elements/form/select";
 @import "elements/blockquote";
 @import "elements/button";
 @import "elements/code";
 @import "elements/footer";
 @import "elements/sidebar";
+@import "elements/table";
 
-@import "utilities/material-icons";
 @import "utilities/bootstrap";

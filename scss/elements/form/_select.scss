@@ -1,0 +1,31 @@
+.input.input--select::after {
+	display: block;
+	position: absolute;
+	bottom: 4px;
+	right: 4px;
+	width: 24px;
+	height: 24px;
+
+	@include material-icons;
+	content: 'arrow_drop_down';
+}
+
+select {
+	@include input;
+
+	width: 200px;
+	height: 32px;
+	padding: .4em .6em;
+
+	&::-ms-expand {
+		display: none;
+	}
+
+	&:hover {
+		border-color: currentColor;
+	}
+}
+
+option {
+	@include var(background-color, "lighter");
+}
