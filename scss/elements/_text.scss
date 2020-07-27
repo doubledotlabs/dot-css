@@ -1,0 +1,27 @@
+@import "../global.scss";
+
+.text {
+	line-height: 1.8;
+}
+
+.text img {
+	@include var("background-color", "dark");
+	@include shadow-light;
+
+	border-radius: 5px;
+}
+
+.text p>img {
+    width: 100%;
+}
+
+.text a>img {
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+	background: none;
+}
+
+.text td>img {
+    min-width: 200px;
+}

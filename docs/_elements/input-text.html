@@ -6,11 +6,21 @@ description: "The text input allows the user to input a string of text."
 ---
 
 <div class="input">
-	<label for="text1">Hello!</label>
+	<label for="text1">Text Input</label>
 	<input id="text1" type="text" placeholder="Placeholder Text">
 </div>
 
+<div class="input">
+	<label for="text1">Invalid Text Input</label>
+	<input id="text1" class="is-invalid" type="text" value="Incorrect Text Value">
+</div>
+
+<div class="input">
+	<label for="text1">Disabled Text Input</label>
+	<input id="text1" type="text" value="Text Value" disabled>
+</div>
+
 <div class="input d-block">
-	<span class="input__title">Hello!</span>
+	<span class="input__title">Textarea</span>
 	<textarea>Hello!</textarea>
 </div>

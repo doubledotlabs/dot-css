@@ -5,10 +5,9 @@
 
 body {
 	margin: 0;
-	background-color: #FFFFFF;
-	background-color: var(--normal-background);
-	color: #424242;
-	color: var(--normal-color);
+	@include var(background-color, "neutral");
+	@include var(color, "primary-2");
+	overflow-x: hidden;
 
 	word-wrap: break-word;
 	word-break: break-word;
@@ -57,20 +56,6 @@ a:not(.link):focus {
 
 html, body {
 	height: 100%;
-}
-
-body {
-	margin: 0;
-
-	@include var("background-color", "neutral");
-	@include var("color", "primary-2");
-
-	word-wrap: break-word;
-	word-break: break-word;
-
-	transition: background-color .25s;
-	-moz-transition: background-color .25s;
-	-webkit-transition: background-color .25s;
 }
 
 body.--sticky-footer {

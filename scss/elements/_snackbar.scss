@@ -1,0 +1,34 @@
+@import "../global.scss";
+
+.snackbar {
+	@include var(background-color, "lighter");
+	@include var(border-top, (1px, solid, "primary-5"));
+
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1rem 10vw;
+	z-index: 102;
+
+	animation-name: snackbar-slideIn;
+	animation-duration: 0.25s;
+}
+
+@keyframes snackbar-slideIn {
+	0% {opacity:0; transform:translateY(100%);}
+	100% {opacity:1; transform:translateY(0);}
+}
+
+.snackbar > * {
+	vertical-align: middle;
+}
+
+.snackbar__text {
+	display: inline-block;
+	padding-right: 2rem;
+}
+
+.snackbar__link {
+	float: right;
+}

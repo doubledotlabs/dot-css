@@ -23,6 +23,20 @@ pre, .code {
 	border-radius: 5px;
 	overflow-x: auto;
 	padding: 1rem;
+
+	tab-size: 4;
+
+	&[data-ts="2"] {
+		tab-size: 2;
+	}
+
+	&[data-ts="4"] { // default
+		tab-size: 4;
+	}
+
+	&[data-ts="8"] {
+		tab-size: 8;
+	}
 }
 
 .code__header {

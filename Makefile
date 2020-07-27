@@ -10,7 +10,7 @@ endif
 all: install build
 
 docs:
-	$(MAKE) -j3 watch-docs watch-sass watch-css
+	$(MAKE) -j2 watch-docs watch-sass
 
 watch-docs:
 	cd docs/; bundle exec jekyll serve --config _config.yml,_config-dev.yml

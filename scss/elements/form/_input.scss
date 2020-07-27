@@ -3,7 +3,8 @@
 .input {
 	display: inline-block;
 	position: relative;
-	margin: 0.5rem 0;
+	margin-bottom: 1rem;
+	margin-right: 0.5rem;
 
 	&> .input__title, &> label {
 		display: block;
@@ -39,8 +40,21 @@
 	&:focus {
 		border-color: currentColor;
 	}
+
+	&.is-invalid, &:invalid {
+		@include var(border-color, "danger");
+		@include var(color, "danger");
+	}
+
+	&[disabled] {
+		@include var(border-color, "primary-5");
+		@include var(color, "primary-5");
+		@include var(background-color, "neutral");
+	}
 }
 
 input[type=text], textarea {
 	@include input;
+
+	width: 180px;
 }
