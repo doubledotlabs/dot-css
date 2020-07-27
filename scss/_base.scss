@@ -51,8 +51,8 @@ a:hover, a:focus {
 }
 
 a:not(.link):focus {
-	@include var(background-color, ("primary", !important));
-	@include var(color, ("on-primary", !important));
+	@include var(background-color, ("highlight", !important));
+	@include var(color, ("on-highlight", !important));
 	text-decoration-color: transparent;
 }
 
