@@ -2,7 +2,7 @@
 
 button, .button, input[type=submit] {
 	@include var(background-color, "neutral");
-	@include var(color, "secondary");
+	@include var(color, "primary-2");
 	@include shadow-light;
 
 	outline: none;
@@ -32,13 +32,13 @@ button, .button, input[type=submit] {
 	&:focus {
 		@include var(background-color, "primary");
 		@include var(color, "lighter");
-		@include var(box-shadow, (0, 0, 0, 0.2rem, "tertiary"));
+		@include shadow-outline;
 
 		border-color: transparent;
 	}
 
 	&[disabled] {
-		@include var(color, "tertiary");
+		@include var(color, "primary-4");
 		background: none;
 		box-shadow: none;
 		border-color: currentColor;

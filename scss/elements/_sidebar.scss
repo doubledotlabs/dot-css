@@ -7,7 +7,7 @@
 
 .sidebar {
 	@include var(background-color, "lighter");
-	@include shadow-light;
+	@include var(border-left, (1px, solid, "primary-5"));
 
 	display: block;
 	padding: 1rem 1.5rem;
@@ -22,7 +22,7 @@
 	z-index: 98;
 
 	transform: translateX(80%);
-	transition: transform .25s;
+	transition: transform .25s, box-shadow .25s;
 
 	&> * {
 		opacity: 0;
@@ -31,18 +31,17 @@
 	}
 
 	&:hover {
+		@include shadow-full;
+		transform: translateX(0px);
+
 		&> * {
 			opacity: 1;
 		}
 	}
 }
 
-.sidebar:hover {
-	transform: translateX(0px);
-}
-
 .sidebar::before {
-	@include var(color, "tertiary");
+	@include var(color, "primary-4");
 
 	content: '‹';
 	display: block;
@@ -74,6 +73,10 @@
 
 		&> * {
 			opacity: 1;
+		}
+
+		&:hover {
+			box-shadow: none;
 		}
 	}
 

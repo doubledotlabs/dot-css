@@ -2,7 +2,7 @@
 
 footer, .footer {
 	@include var(background-color, "dark");
-	@include var(border-top, (1px, solid, "tertiary"));
+	@include var(border-top, (1px, solid, "primary-5"));
 
 	clear: both;
 	margin-top: 3rem;
@@ -10,7 +10,7 @@ footer, .footer {
 }
 
 .footer__link {
-	@include var(color, "secondary");
+	@include var(color, "primary-2");
 	font-size: .75em;
 
 	&:after {

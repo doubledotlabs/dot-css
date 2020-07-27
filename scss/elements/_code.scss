@@ -16,9 +16,9 @@ code {
 }
 
 pre, .code {
-	@include var(background-color, "lighter");
-	@include var(border, (1px, solid, "tertiary"));
-	@include shadow-light;
+	@include var(background-color, "light");
+	@include var(border, (1px, solid, "primary-5"));
+	@include shadow;
 
 	border-radius: 5px;
 	overflow-x: auto;
@@ -28,8 +28,8 @@ pre, .code {
 .code__header {
 	@include var(color, (1px, solid, "primary"));
 	@include var(background-color, "darker");
-	@include var(border, (1px, solid, "tertiary"));
-	@include shadow-light;
+	@include var(border, (1px, solid, "primary-5"));
+	@include shadow;
 
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;

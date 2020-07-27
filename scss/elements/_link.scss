@@ -1,0 +1,91 @@
+@import "../global.scss";
+
+.link {
+	background: none;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	min-height: 2em;
+	margin-bottom: 0.5rem;
+
+	.link__img {
+		width: 24px;
+		min-width: 24px;
+		height: 24px;
+		margin-right: 18px;
+
+		filter: contrast(0);
+
+		transition: filter .25s;
+
+		&--round {
+			@extend .link__img;
+
+			@include var(border, (1px, solid, "primary-3"));
+			@include var(box-shadow, ("0 0 1px 0px", "primary-3", ",", "0 0 1px 0px", "primary-3"));
+
+			border-radius: 50%;
+			transition: border .25s;
+		}
+	}
+
+	.link__title + .link__img {
+		margin-right: 0;
+		margin-left: 18px;
+	}
+
+	.link__title {
+		@include var(color, "primary-3");
+		text-decoration: none;
+
+		transition: color .25s;
+	}
+
+	&:hover, &:focus {
+		text-decoration: none;
+
+		.link__img--round {
+			@include var(border-color, "primary");
+		}
+
+		.link__img:not(.link__img--round) {
+			@include var(filter, "attr-filter-color");
+		}
+
+		.link__title {
+			@include var(color, "primary");
+		}
+	}
+}
+
+.link--chip {
+	display: inline-flex;
+	border-radius: 1.25em;
+	padding: .25rem 1rem;
+	margin-right: 0.5rem;
+	min-height: 2.5em;
+	vertical-align: top;
+
+	@include var(border, (1px, solid, "primary-5"));
+	@include var(background-color, "dark");
+
+	transition: background-color .25s, box-shadow .25s, border-color .25s;
+
+	* {
+		@include var(color, "primary-2");
+	}
+
+	.link__img {
+		margin-right: 8px;
+		margin-left: -2px;
+	}
+
+	&:hover {
+		@include var(border-color, "primary");
+	}
+
+	&:focus {
+		@include shadow-outline;
+		border-color: transparent;
+	}
+}

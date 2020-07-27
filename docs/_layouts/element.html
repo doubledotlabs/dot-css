@@ -8,7 +8,7 @@ layout: default
 	{% if page.category %}
 	{% assign category = site.categories | where: "title", page.category | first %}
 	<a class="link" href="{{ site.baseurl }}{{ category.id }}">
-		<img class="link__img" src="/images/ic/back.svg">
+		<i class="link__img material-icons">arrow_back</i>
 		<span class="link__title">"{{ page.category }}" Category</span>
 	</a>
 	{% else %}

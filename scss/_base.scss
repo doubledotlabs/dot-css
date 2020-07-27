@@ -14,8 +14,10 @@ body {
 	word-break: break-word;
 
 	transition: background-color .25s;
-	-moz-transition: background-color .25s;
-	-webkit-transition: background-color .25s;
+
+	&> main {
+		margin-top: 1.5rem;
+	}
 }
 
 h1, h2, h3, h4, h5,
@@ -24,7 +26,7 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a {
 }
 
 p {
-	@include var("color", "secondary");
+	@include var("color", "primary-2");
 }
 
 a {
@@ -47,7 +49,7 @@ a:hover, a:focus {
 	text-decoration: underline;
 }
 
-a:focus {
+a:not(.link):focus {
 	@include var(color, ("lighter", !important));
 	@include var(background-color, ("primary", !important));
 	text-decoration-color: transparent;
@@ -61,7 +63,7 @@ body {
 	margin: 0;
 
 	@include var("background-color", "neutral");
-	@include var("color", "secondary");
+	@include var("color", "primary-2");
 
 	word-wrap: break-word;
 	word-break: break-word;
@@ -83,4 +85,9 @@ body.--sticky-footer {
 	&+ footer, &+ .footer {
 		flex-shrink: 0;
 	}
+}
+
+::selection {
+	@include var(background-color, "highlight");
+	@include var(color, "on-highlight");
 }

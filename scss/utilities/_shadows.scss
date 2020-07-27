@@ -10,6 +10,10 @@
 	box-shadow: $shadow-full rgba(0, 0, 0, 0.2);
 }
 
+@mixin shadow-outline {
+	@include var(box-shadow, (0, 0, 0, 0.2rem, "primary-4"));
+}
+
 .shadow {
 	@include shadow;
 }
@@ -20,4 +24,8 @@
 
 .shadow-full {
 	@include shadow-full;
+}
+
+.shadow-outline {
+	@include shadow-outline;
 }
