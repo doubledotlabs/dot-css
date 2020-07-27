@@ -17,7 +17,7 @@ watch-docs:
 
 watch-sass:
 	[ -d docs/dist ] || mkdir docs/dist
-	${NPX} sass styles.scss docs/dist/styles.css --watch
+	${NPX} sass scss/styles.scss docs/dist/styles.css --watch
 
 install: package-install.lock
 
@@ -27,6 +27,6 @@ package-install.lock: package.json
 
 build: install
 	[ -d build ] || mkdir build
-	${NPX} sass styles.scss build/styles.css
+	${NPX} sass scss/styles.scss build/styles.css
 	[ -d dist ] || mkdir dist
 	node_modules/postcss-cli/bin/postcss build/styles.css -o dist/styles.css

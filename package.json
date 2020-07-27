@@ -1,35 +1,35 @@
 {
-  "name": "@doubledotlabs/dot.css",
-  "version": "0.0.1",
-  "description": "",
-  "main": "",
-  "files": [
-    "/dist",
-    "styles.scss",
-    "global.scss",
-    "material-icons.scss",
-    "/elements"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/doubledotlabs/dot-css.git"
-  },
-  "author": "Double Dot Labs <mail@doubledot.dev> (https://doubledot.dev/)",
-  "license": "MPL-2.0",
-  "bugs": {
-    "url": "https://github.com/doubledotlabs/dot-css/issues"
-  },
-  "homepage": "https://github.com/doubledotlabs/dot-css#readme",
-  "devDependencies": {
-    "autoprefixer": "^9.8.5",
-    "cssnano": "^4.1.10",
-    "postcss-cli": "^7.1.1",
-    "sass": "^1.23.3"
-  },
-  "dependencies": {
-    "bootstrap": "^4.5.0"
-  }
+	"name": "@doubledotlabs/dot.css",
+	"version": "0.0.1",
+	"description": "",
+	"main": "",
+	"files": [
+		"README.md",
+		"LICENSE",
+		"package.json",
+		"/dist",
+		"/scss"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://code.horrific.dev/james/dot-css.git"
+	},
+	"author": "Double Dot Labs <mail@doubledot.dev> (https://doubledot.dev/)",
+	"license": "MPL-2.0",
+	"bugs": {
+		"url": "https://code.horrific.dev/james/dot-css/issues"
+	},
+	"homepage": "https://doubledot.dev/dot-css",
+	"devDependencies": {
+		"autoprefixer": "^9.8.5",
+		"cssnano": "^4.1.10",
+		"postcss-cli": "^7.1.1",
+		"sass": "^1.23.3"
+	},
+	"dependencies": {
+		"bootstrap": "^4.5.0"
+	}
 }
