@@ -1,0 +1,23 @@
+@mixin shadow {
+	box-shadow: $shadow rgba(0, 0, 0, 0.15);
+}
+
+@mixin shadow-light {
+	box-shadow: $shadow-light rgba(0, 0, 0, 0.175);
+}
+
+@mixin shadow-full {
+	box-shadow: $shadow-full rgba(0, 0, 0, 0.2);
+}
+
+.shadow {
+	@include shadow;
+}
+
+.shadow-light {
+	@include shadow-light;
+}
+
+.shadow-full {
+	@include shadow-full;
+}

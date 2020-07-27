@@ -1,4 +1,13 @@
-@import "global.scss";
+/*!
+ * dot.css (https://code.horrific.dev/james/dot.css)
+ * Copyright (c) 2020 dot-css Contributors
+ * Licensed under MPL v2.0 (https://code.horrific.dev/james/dot.css/src/branch/main/LICENSE)
+ */
+
+@import "global";
+
+@import "utilities/colors";
+@import "utilities/shadows";
 
 * {
 	font-family: $font-body;
@@ -15,141 +24,22 @@
 	}
 }
 
+.--theme-light,
+.--theme-light * {
+	@include theme-vars($theme);
+}
+
 .--theme-dark,
 .--theme-dark * {
 	@include theme-vars($theme-dark);
 }
 
-@keyframes fadeIn {
-	from {opacity: 0;}
-	to {opacity: 1;}
-}
+@import "base";
+@import "elements/blockquote";
+@import "elements/button";
+@import "elements/code";
+@import "elements/footer";
+@import "elements/sidebar";
 
-body {
-	margin: 0;
-	background-color: #FFFFFF;
-	background-color: var(--normal-background);
-	color: #424242;
-	color: var(--normal-color);
-
-	word-wrap: break-word;
-	word-break: break-word;
-
-	transition: background-color .25s;
-	-moz-transition: background-color .25s;
-	-webkit-transition: background-color .25s;
-}
-
-h1, h2, h3, h4, h5,
-h1 > a, h2 > a, h3 > a, h4 > a, h5 > a {
-    font-family: $font-heading;
-}
-
-p {
-	@include var("color", "normal-color-text");
-}
-
-a {
-	@include var("color", "accent-color-text");
-
-	cursor: pointer;
-	outline: none;
-	text-decoration: underline;
-	transition: color .25s;
-	-moz-transition: color .25s;
-	-webkit-transition: color .25s;
-}
-
-a:hover, a:focus {
-	@include var("color", "normal-color-focus");
-}
-
-a:focus {
-	text-decoration-color: transparent;
-	font-weight: bold;
-}
-
-.material-icons.--focusable {
-	@include var("color", "normal-color-focusable");
-
-	transition: color .25s;
-	-moz-transition: color .25s;
-	-webkit-transition: color .25s;
-}
-
-.material-icons.--focusable:hover {
-	@include var("color", "normal-color-focus");
-}
-
-.material-icons.--clickable {
-	user-select: none;
-	cursor: pointer;
-}
-
-@import "elements/button.scss";
-@import "elements/blockquote.scss";
-@import "elements/footer.scss";
-@import "elements/iframe.scss";
-@import "elements/item.scss";
-@import "elements/markdown.scss";
-@import "elements/nav.scss";
-@import "elements/pager.scss";
-@import "elements/table.scss";
-@import "elements/tabs.scss";
-@import "elements/code.scss";
-@import "elements/form.scss";
-@import "elements/select.scss";
-@import "elements/layout.scss";
-@import "elements/sidebar.scss";
-@import "elements/img.scss";
-@import "elements/link.scss";
-@import "elements/snackbar.scss";
-
-body {
-	margin: 0;
-
-	@include var("background-color", "normal-background");
-	@include var("color", "normal-color");
-
-	word-wrap: break-word;
-	word-break: break-word;
-
-	transition: background-color .25s;
-	-moz-transition: background-color .25s;
-	-webkit-transition: background-color .25s;
-}
-
-main {
-	display: block;
-	margin-left: 10vw;
-	margin-right: 10vw;
-	margin-bottom: 2em;
-	padding-top: 2em;
-	
-	transition: transform .25s;
-	-moz-transition: transform .25s;
-	-webkit-transition: transform .25s;
-}
-
-@media(max-width: 599px) {
-	main {
-		padding-top: 16px;
-	}
-
-	.--desktop {
-		display: none;
-	}
-}
-
-@media(max-width: 1000px) {
-    .--desktop-large {
-        display: none;
-    }
-}
-
-@media(min-width: 1575px) {
-	main {
-		margin-left: calc(50vw - 630px);
-		margin-right: calc(50vw - 630px);
-	}
-}
+@import "utilities/material-icons";
+@import "utilities/bootstrap";

@@ -12,9 +12,3 @@ pre.highlight > code {
 	background: initial;
 }
 </style>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-{% for language in include.languages %}
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/languages/{{ language | downcase }}.min.js"></script>
-{% endfor %}
-<script>hljs.initHighlightingOnLoad();</script>

@@ -1,0 +1,40 @@
+@import "../global.scss";
+
+button, .button {
+	@include var(background-color, "neutral");
+	@include var(color, "secondary");
+
+	outline: none;
+	border: 1px solid currentColor;
+	border-radius: 5px;
+	user-select: none;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+
+	transition: box-shadow .25s, background-color .25s, border-color .25s, color .25s;
+	-moz-transition: box-shadow .25s, background-color .25s, border-color .25s, color .25s;
+	-webkit-transition: box-shadow .25s, background-color .25s, border-color .25s, color .25s;
+
+	&:focus {
+		@include var(background-color, "lighter");
+		@include var(color, "primary");
+		@include var(box-shadow, (0, 0, 0, 0.2rem, "tertiary"));
+
+		border-color: transparent;
+	}
+
+	&:hover {
+		@include var(background-color, "accent");
+		@include var(color, "on-accent");
+		@include shadow;
+
+		border-color: transparent;
+	}
+
+	&[disabled] {
+		@include var(color, "tertiary");
+		background: none;
+		box-shadow: none;
+		border-color: currentColor;
+	}
+}

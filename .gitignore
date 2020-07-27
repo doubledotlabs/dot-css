@@ -2,4 +2,7 @@
 _site/
 node_modules/
 dist/
+build/
+.jekyll-cache/
 package-install.lock
+pnpm-lock.yaml

@@ -1,0 +1,108 @@
+$box-fixed-x: 4rem !default;
+$box-fluid-x: 2vw !default;
+$box-x: calc(#{$box-fixed-x} + #{$box-fluid-x}) !default;
+
+$box-fixed-y: .5rem !default;
+$box-fluid-y: 2vw !default;
+$box-y: calc(#{$box-fixed-y} + #{$box-fluid-y}) !default;
+
+$box-border-size: 2px !default;
+
+$font-heading: 'Bitter', serif !default;
+$font-body: 'Titillium Web', monospace !default;
+$font-code: 'Roboto Mono', monospace !default;
+
+$shadow-light: 0 .125rem .25rem !default;
+$shadow: 0 .5rem 1rem !default;
+$shadow-full: 0 1rem 3rem !default;
+
+$theme: (
+	"lighter": #FFFFFF,
+	"light": #FAFAFA,
+	"neutral": #F5F5F5,
+	"dark": #E0E0E0,
+	"darker": #BDBDBD,
+	"primary": #101010,
+	"on-primary": #BDBDBD,
+	"secondary": #424242,
+	"on-secondary": #E0E0E0,
+	"tertiary": #BDBDBD,
+	"on-tertiary": #FAFAFA,
+	"accent": #007bff,
+	"on-accent": #FFFFFF,
+	"highlight": #004fa3,
+	"on-highlight": #FFFFFF,
+	"success": #28a745,
+	"danger": #dc3545,
+	"warning": #ffc107,
+	"info": #17a2b8,
+	"white": "#FFFFFF",
+	"black": "#000000",
+    "attr-filter-color": contrast(0) brightness(0)
+) !default;
+
+$theme-dark: (
+	"primary": #FAFAFA,
+	"on-primary": #616161,
+	"secondary": #E0E0E0,
+	"on-secondary": #424242,
+	"tertiary": #616161,
+	"on-tertiary": #616161,
+	"surface": #212121,
+	"on-surface": #FAFAFA,
+	"accent": #00EAC0,
+	"on-accent": #000000,
+	"highlight": #00EAC0,
+	"on-highlight": #000000,
+	"success": #28a745,
+	"danger": #dc3545,
+	"warning": #ffc107,
+	"info": #17a2b8,
+	"light": "#FAFAFA",
+	"dark": #101010,
+	"white": "#FFFFFF",
+	"black": "#000000",
+    "attr-filter-color": contrast(0) brightness(2)
+
+) !default;
+
+@mixin theme-vars($t) {
+  @each $key, $value in $t {
+    --#{$key}: #{$value};
+  }
+}
+
+@function var-defaults($keys, $separator: space) {
+  $list: ();
+
+  @each $key in $keys {
+    @if map-has-key($theme, $key) {
+      $list: append($list, #{map-get($theme, $key)}, $separator: $separator);
+    }
+    @else {
+      $list: append($list, $key, $separator: $separator);
+    }
+  }
+
+  @return $list;
+}
+
+@function var-values($keys, $separator: space) {
+  $list: ();
+
+  @each $key in $keys {
+    @if map-has-key($theme, $key) {
+      $list: append($list, var(--#{$key}), $separator: $separator);
+    }
+    @else {
+      $list: append($list, $key, $separator: $separator);
+    }
+  }
+
+  @return $list;
+}
+
+@mixin var($attr, $keys, $separator: space) {
+	#{$attr}: var-defaults($keys);
+	#{$attr}: var-values($keys);
+}

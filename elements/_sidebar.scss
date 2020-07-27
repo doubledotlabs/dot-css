@@ -1,0 +1,84 @@
+@import "../global.scss";
+
+.sidebar ~ .container,
+.sidebar ~ footer>.container {
+	padding-right: 75px;
+}
+
+.sidebar {
+	@include var(background-color, "lighter");
+	@include shadow-light;
+
+	display: block;
+	padding: 1rem 1.5rem;
+
+	position: fixed;
+	width: 300px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	overflow-y: hidden;
+	z-index: 98;
+
+	transform: translateX(80%);
+	transition: transform .25s;
+
+	&> * {
+		opacity: 0;
+
+		transition: opacity .25s;
+	}
+
+	&:hover {
+		&> * {
+			opacity: 1;
+		}
+	}
+}
+
+.sidebar:hover {
+	transform: translateX(0px);
+}
+
+.sidebar::before {
+	@include var(color, "tertiary");
+
+	content: '‹';
+	display: block;
+	font-size: 2em;
+
+	position: relative;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+
+	transition: opacity .25s;
+}
+
+.sidebar:hover::before {
+	opacity: 0;
+}
+
+@media(min-width: 800px) {
+	.sidebar ~ .container,
+	.sidebar ~ footer>.container {
+		padding-right: 300px;
+	}
+
+	.sidebar {
+		position: fixed;
+		width: 300px;
+
+		transform: none;
+
+		&> * {
+			opacity: 1;
+		}
+	}
+
+	.sidebar::before {
+		display: none;
+	}
+
+}

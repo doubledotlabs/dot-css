@@ -4,7 +4,7 @@ layout: default
 
 {% include sidebar.html %}
 
-<main>
+<main class="container">
 	{% if page.category %}
 	{% assign category = site.categories | where: "title", page.category | first %}
 	<a class="link" href="{{ site.baseurl }}{{ category.id }}">
@@ -21,10 +21,11 @@ layout: default
 	<p>{{ page.description }}</p>
 	<h2 id="demo">Demo</h2>
 	<div>{{ page.content }}</div>
+
 	<h2 id="code">Code</h2>
+	<div class="code__header">
+		<i class="material-icons mr-2">code</i>
+		<a class="text-primary" href="{{ site.giturl }}/blob/master/{{ category.file | default: page.file }}">{{ category.file | default: page.file }}</a>
+	</div>
 	<pre><code class="html">{{ page.content | xml_escape }}</code></pre>
-	<a class="link" href="{{ site.giturl }}/blob/master/{{ category.file | default: page.file }}">
-		<i class="link__img material-icons">code</i>
-		<span class="link__title">View Source CSS</span>
-	</a>
 </main>

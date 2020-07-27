@@ -1,0 +1,13 @@
+@each $key, $value in $theme {
+	.text-#{$key} {
+		@include var(color, ($key, !important));
+	}
+
+	.bg-#{$key} {
+		@include var(background-color, ($key, !important));
+	}
+
+	.border-#{$key} {
+		@include var(border-color, ($key, !important));
+	}
+}

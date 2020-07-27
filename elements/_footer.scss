@@ -1,0 +1,20 @@
+@import "../global.scss";
+
+footer, .footer {
+	@include var(background-color, "dark");
+	@include var(border-top, (1px, solid, "tertiary"));
+
+	clear: both;
+	margin-top: 3rem;
+	padding: 1rem 0;
+}
+
+.footer__link {
+	@include var(color, "secondary");
+	font-size: .75em;
+
+	&:after {
+		content: "\a";
+		white-space: pre;
+	}
+}
