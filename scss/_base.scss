@@ -6,7 +6,7 @@
 body {
 	margin: 0;
 	@include var(background-color, "neutral");
-	@include var(color, "primary-2");
+	@include var(color, "tertiary-2");
 	overflow-x: hidden;
 
 	word-wrap: break-word;
@@ -21,11 +21,13 @@ body {
 
 h1, h2, h3, h4, h5,
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a {
+	@include var("color", "secondary-2");
+
     font-family: $font-heading;
 }
 
 p {
-	@include var("color", "primary-2");
+	@include var("color", "tertiary-2");
 }
 
 a {
@@ -49,8 +51,8 @@ a:hover, a:focus {
 }
 
 a:not(.link):focus {
-	@include var(color, ("lighter", !important));
 	@include var(background-color, ("primary", !important));
+	@include var(color, ("on-primary", !important));
 	text-decoration-color: transparent;
 }
 

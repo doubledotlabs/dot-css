@@ -1,0 +1,51 @@
+.card {
+	@include var(background-color, "light");
+	@include var(border, (1px, solid, "tertiary-5"));
+
+	min-width: 250px;
+
+	display: inline-block;
+	border-radius: $box-border-radius;
+
+	transition: background-color .25s, border .25s, box-shadow .25s;
+
+	@each $key in $theme-keys {
+		&--#{$key} {
+			@include var(background-color, "#{$key}-5");
+			@include var(border-color, "#{$key}-4");
+		}
+	}
+
+	&[onclick], &[href], &--clickable {
+		background: none;
+		cursor: pointer;
+
+		&:hover {
+			@include var(background-color, "light");
+			@include shadow;
+		}
+	}
+
+	&__title {
+		@include var(color, "secondary");
+
+		display: block;
+		margin-top: 1rem;
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
+		margin-bottom: 0.25rem;
+
+		padding: 0;
+
+		&+ .card__body {
+			margin-top: 0;
+		}
+	}
+
+	&__body {
+		@include var(color, "tertiary-2");
+
+		margin: 1rem 1.5rem;
+		padding: 0;
+	}
+}

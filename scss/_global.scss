@@ -7,6 +7,7 @@ $box-fluid-y: 2vw !default;
 $box-y: calc(#{$box-fixed-y} + #{$box-fluid-y}) !default;
 
 $box-border-size: 2px !default;
+$box-border-radius: 5px !default;
 
 $font-heading: 'Bitter', serif !default;
 $font-body: 'Titillium Web', monospace !default;
@@ -16,18 +17,18 @@ $shadow-light: 0 .125rem .25rem !default;
 $shadow: 0 .4rem 1.2rem !default;
 $shadow-full: 0 1rem 3rem !default;
 
-$theme: (
+$theme-light: (
 	"lighter": #FFFFFF,
 	"light": #FAFAFA,
-	"neutral": #F5F5F5,
+	"neutral": #F0F0F0,
 	"dark": #E0E0E0,
 	"darker": #BDBDBD,
-	"primary": #101010,
-	"primary-1": #212121,
-	"primary-2": #424242,
-	"primary-3": #616161,
-	"primary-4": #8A8A8A,
-	"primary-5": #BDBDBD,
+	"primary": #90c1f5,
+	"on-primary": #000000,
+	"secondary": #0e2033,
+	"on-secondary": #FFFFFF,
+	"tertiary": #000000,
+	"on-tertiary": #FFFFFF,
 	"accent": #007bff,
 	"on-accent": #FFFFFF,
 	"highlight": #004fa3,
@@ -36,9 +37,8 @@ $theme: (
 	"danger": #dc3545,
 	"warning": #ffc107,
 	"info": #17a2b8,
-	"white": "#FFFFFF",
-	"black": "#000000",
-    "attr-filter-color": contrast(0) brightness(0)
+	"white": #FFFFFF,
+	"black": #000000
 ) !default;
 
 $theme-dark: (
@@ -47,12 +47,12 @@ $theme-dark: (
 	"neutral": #212121,
 	"dark": #151515,
 	"darker": #101010,
-	"primary": #FAFAFA,
-	"primary-1": #F5F5F5,
-	"primary-2": #E0E0E0,
-	"primary-3": #BDBDBD,
-	"primary-4": #9E9E9E,
-	"primary-5": #616161,
+	"primary": #FFFFFF,
+	"on-primary": #000000,
+	"secondary": #FFFFFF,
+	"on-secondary": #000000,
+	"tertiary": #FFFFFF,
+	"on-tertiary": #000000,
 	"accent": #00EAC0,
 	"on-accent": #000000,
 	"highlight": #00EAC0,
@@ -61,11 +61,38 @@ $theme-dark: (
 	"danger": #dc3545,
 	"warning": #ffc107,
 	"info": #17a2b8,
-	"white": "#FFFFFF",
-	"black": "#000000",
-    "attr-filter-color": contrast(0) brightness(2)
+	"white": #FFFFFF,
+	"black": #000000
 
 ) !default;
+
+$themes: (
+	"light": $theme-light,
+	"dark": $theme-dark
+) !default;
+
+$theme-keys: ();
+
+@each $key, $theme in $themes {
+	$new-theme: ();
+	$new-theme-keys: ();
+
+	@each $name, $color in $theme {
+		$new-theme: map-merge($new-theme, (
+			"#{$name}": $color,
+			"#{$name}-1": change-color($color, $alpha: 0.9),
+			"#{$name}-2": change-color($color, $alpha: 0.75),
+			"#{$name}-3": change-color($color, $alpha: 0.6),
+			"#{$name}-4": change-color($color, $alpha: 0.4),
+			"#{$name}-5": change-color($color, $alpha: 0.2)
+		));
+
+		$new-theme-keys: append($new-theme-keys, $name);
+	}
+
+	$themes: map-merge($themes, ("#{$key}": $new-theme)) !global;
+	$theme-keys: $new-theme-keys !global;
+}
 
 @mixin theme-vars($t) {
   @each $key, $value in $t {
@@ -75,6 +102,7 @@ $theme-dark: (
 
 @function var-defaults($keys, $separator: space) {
   $list: ();
+  $theme: map-get($themes, "light");
 
   @each $key in $keys {
     @if map-has-key($theme, $key) {
@@ -90,6 +118,7 @@ $theme-dark: (
 
 @function var-values($keys, $separator: space) {
   $list: ();
+  $theme: map-get($themes, "light");
 
   @each $key in $keys {
     @if map-has-key($theme, $key) {

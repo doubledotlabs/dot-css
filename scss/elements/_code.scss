@@ -1,5 +1,3 @@
-@import "../global.scss";
-
 code {
 	@include var(background-color, "dark");
 
@@ -17,10 +15,10 @@ code {
 
 pre, .code {
 	@include var(background-color, "light");
-	@include var(border, (1px, solid, "primary-5"));
+	@include var(border, (1px, solid, "tertiary-4"));
 	@include shadow;
 
-	border-radius: 5px;
+	border-radius: $box-border-radius;
 	overflow-x: auto;
 	padding: 1rem;
 
@@ -40,13 +38,13 @@ pre, .code {
 }
 
 .code__header {
-	@include var(color, (1px, solid, "primary"));
+	@include var(color, (1px, solid, "secondary"));
 	@include var(background-color, "darker");
-	@include var(border, (1px, solid, "primary-5"));
+	@include var(border, (1px, solid, "tertiary-5"));
 	@include shadow;
 
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-top-left-radius: $box-border-radius;
+	border-top-right-radius: $box-border-radius;
 
 	padding: 0.5rem 1rem;
 

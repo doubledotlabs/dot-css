@@ -1,5 +1,3 @@
-@import "../global.scss";
-
 table {
 	@include var(border, (1px, solid, "darker"));
 
@@ -7,12 +5,12 @@ table {
 	max-width: 100%;
 	overflow-x: auto;
 	border-collapse: collapse;
-	border-radius: 5px;
+	border-radius: $box-border-radius;
 }
 
 thead {
 	@include var(background-color, "darker");
-	@include var(color, "primary");
+	@include var(color, "secondary");
 }
 
 th, td {

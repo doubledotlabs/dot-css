@@ -1,5 +1,3 @@
-@import "../global.scss";
-
 .text {
 	line-height: 1.8;
 }
@@ -8,7 +6,7 @@
 	@include var("background-color", "dark");
 	@include shadow-light;
 
-	border-radius: 5px;
+	border-radius: $box-border-radius;
 }
 
 .text p>img {

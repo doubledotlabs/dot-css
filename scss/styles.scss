@@ -16,23 +16,20 @@
 	animation-duration: .3s;
 	animation-timing-function: ease-out;
 
-	@include theme-vars($theme);
+	@include theme-vars(map-get($themes, "light"));
 }
 
 @media (prefers-color-scheme: dark) {
 	* {
-		@include theme-vars($theme-dark);
+		@include theme-vars(map-get($themes, "dark"));
 	}
 }
 
-.--theme-light,
-.--theme-light * {
-	@include theme-vars($theme);
-}
-
-.--theme-dark,
-.--theme-dark * {
-	@include theme-vars($theme-dark);
+@each $name, $theme in $themes {
+	.--theme-#{$name},
+	.--theme-#{$name} * {
+		@include theme-vars($theme);
+	}
 }
 
 @import "base";
@@ -40,6 +37,7 @@
 @import "elements/form/select";
 @import "elements/blockquote";
 @import "elements/button";
+@import "elements/card";
 @import "elements/code";
 @import "elements/footer";
 @import "elements/link";

@@ -1,5 +1,3 @@
-@import "../global.scss";
-
 .link {
 	background: none;
 	text-decoration: none;
@@ -9,20 +7,22 @@
 	margin-bottom: 0.5rem;
 
 	.link__img {
+		@include var(color, "tertiary");
+
 		width: 24px;
 		min-width: 24px;
 		height: 24px;
 		margin-right: 18px;
 
-		filter: contrast(0);
+		opacity: 0.6;
 
-		transition: filter .25s;
+		transition: opacity .25s;
 
 		&--round {
 			@extend .link__img;
 
-			@include var(border, (1px, solid, "primary-3"));
-			@include var(box-shadow, ("0 0 1px 0px", "primary-3", ",", "0 0 1px 0px", "primary-3"));
+			@include var(border, (1px, solid, "tertiary-3"));
+			@include var(box-shadow, ("0 0 1px 0px", "tertiary-3", ",", "0 0 1px 0px", "tertiary-3"));
 
 			border-radius: 50%;
 			transition: border .25s;
@@ -35,7 +35,7 @@
 	}
 
 	.link__title {
-		@include var(color, "primary-3");
+		@include var(color, "tertiary-3");
 		text-decoration: none;
 
 		transition: color .25s;
@@ -45,15 +45,15 @@
 		text-decoration: none;
 
 		.link__img--round {
-			@include var(border-color, "primary");
+			@include var(border-color, "tertiary");
 		}
 
 		.link__img:not(.link__img--round) {
-			@include var(filter, "attr-filter-color");
+			opacity: 1;
 		}
 
 		.link__title {
-			@include var(color, "primary");
+			@include var(color, "tertiary");
 		}
 	}
 }
@@ -66,13 +66,13 @@
 	min-height: 2.5em;
 	vertical-align: top;
 
-	@include var(border, (1px, solid, "primary-5"));
+	@include var(border, (1px, solid, "tertiary-5"));
 	@include var(background-color, "dark");
 
 	transition: background-color .25s, box-shadow .25s, border-color .25s;
 
 	* {
-		@include var(color, "primary-2");
+		@include var(color, "tertiary-2");
 	}
 
 	.link__img {
@@ -81,11 +81,11 @@
 	}
 
 	&:hover {
-		@include var(border-color, "primary");
+		@include var(border-color, "tertiary");
 	}
 
 	&:focus {
-		@include shadow-outline;
+		@include shadow-outline("tertiary-4");
 		border-color: transparent;
 	}
 }

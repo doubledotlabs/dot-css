@@ -1,8 +1,6 @@
-@import "../global.scss";
-
 .snackbar {
 	@include var(background-color, "lighter");
-	@include var(border-top, (1px, solid, "primary-5"));
+	@include var(border-top, (1px, solid, "tertiary-5"));
 
 	position: fixed;
 	bottom: 0;
@@ -12,12 +10,13 @@
 	z-index: 102;
 
 	animation-name: snackbar-slideIn;
-	animation-duration: 0.25s;
+	animation-duration: .25s;
+	animation-delay: .25s;
 }
 
 @keyframes snackbar-slideIn {
 	0% {opacity:0; transform:translateY(100%);}
-	100% {opacity:1; transform:translateY(0);}
+	100% {opacity:1; transform:translateY(0%);}
 }
 
 .snackbar > * {

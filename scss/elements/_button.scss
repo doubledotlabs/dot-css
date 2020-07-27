@@ -1,8 +1,6 @@
-@import "../global.scss";
-
 button, .button, input[type=submit] {
 	@include var(background-color, "neutral");
-	@include var(color, "primary-2");
+	@include var(color, "secondary-2");
 	@include shadow-light;
 
 	outline: none;
@@ -31,14 +29,14 @@ button, .button, input[type=submit] {
 
 	&:focus {
 		@include var(background-color, "primary");
-		@include var(color, "lighter");
-		@include shadow-outline;
+		@include var(color, "on-primary");
+		@include shadow-outline("primary-4");
 
 		border-color: transparent;
 	}
 
 	&[disabled] {
-		@include var(color, "primary-4");
+		@include var(color, "secondary-4");
 		background: none;
 		box-shadow: none;
 		border-color: currentColor;
