@@ -2,7 +2,7 @@ code {
 	@include var(background-color, "dark");
 
 	padding: 2px 6px;
-	border-radius: 3px;
+	border-radius: ($box-border-radius/1.5);
 
 	font-family: $font-code;
 	font-size: 0.9em;
@@ -16,6 +16,7 @@ code {
 pre, .code {
 	@include var(background-color, "light");
 	@include var(border, (1px, solid, "tertiary-4"));
+	@include var(color, (1px, solid, "tertiary"));
 	@include shadow;
 
 	border-radius: $box-border-radius;
@@ -68,7 +69,7 @@ a {
 	}
 
 	&:focus > code {
-		@include var(background-color, "primary");
+		@include var(background-color, "highlight");
 	}
 }
 
