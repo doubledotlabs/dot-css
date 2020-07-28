@@ -15,7 +15,7 @@ code {
 
 pre, .code {
 	@include var(background-color, "light");
-	@include var(border, (1px, solid, "tertiary-4"));
+	@include var(border, (1px, solid, "tertiary-5"));
 	@include var(color, (1px, solid, "tertiary"));
 	@include shadow;
 

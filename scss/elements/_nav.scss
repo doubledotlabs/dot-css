@@ -1,0 +1,52 @@
+nav, .nav {
+	@include var(background-color, "primary");
+	@include var(color, "on-primary");
+	@include shadow;
+
+	display: block;
+	display: flex;
+	align-items: center;
+	z-index: 80;
+
+	min-height: 48px;
+
+	.nav__left {
+		float: left;
+	}
+
+	.nav__right {
+		float: right;
+	}
+
+	.nav__logo {
+		@include var(color, "on-primary");
+
+		display: inline-flex;
+		align-items: center;
+
+		font-size: 1.4em;
+		min-height: 48px;
+	}
+
+	.nav__item {
+		@include var(color, "on-primary-3");
+
+		display: inline-flex;
+		align-items: center;
+
+		margin: 0;
+		padding: 0 0.5rem;
+		min-height: 48px;
+
+		&__img {
+			font-size: 18px;
+			margin-right: .25rem;
+		}
+
+		&:hover {
+			@include var(color, "on-primary");
+
+			text-decoration: none;
+		}
+	}
+}
