@@ -1,4 +1,4 @@
-nav, .nav {
+.navbar {
 	@include var(background-color, "primary");
 	@include var(color, "on-primary");
 	@include shadow;
@@ -10,15 +10,7 @@ nav, .nav {
 
 	min-height: 48px;
 
-	.nav__left {
-		float: left;
-	}
-
-	.nav__right {
-		float: right;
-	}
-
-	.nav__logo {
+	.navbar-brand {
 		@include var(color, "on-primary");
 
 		display: inline-flex;
@@ -28,7 +20,7 @@ nav, .nav {
 		min-height: 48px;
 	}
 
-	.nav__item {
+	.navbar-item {
 		@include var(color, "on-primary-3");
 
 		display: inline-flex;
@@ -38,7 +30,7 @@ nav, .nav {
 		padding: 0 0.5rem;
 		min-height: 48px;
 
-		&__img {
+		&-img {
 			font-size: 18px;
 			margin-right: .25rem;
 		}

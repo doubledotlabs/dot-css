@@ -4,7 +4,7 @@
 	margin-bottom: 1rem;
 	margin-right: 0.5rem;
 
-	&> .input__title, &> label {
+	&> .input-title, &> label {
 		display: block;
 		margin: 0;
 		margin-bottom: .2em;
@@ -17,7 +17,7 @@
 		transition: color .25s;
 	}
 
-	&:focus-within > .input__title,
+	&:focus-within > .input-title,
 	&:focus-within > label {
 		@include var("color", "secondary");
 	}

@@ -22,7 +22,7 @@
 		}
 	}
 
-	&[onclick], &[href], &--clickable {
+	&[onclick], &[href], &-clickable {
 		background: none;
 		cursor: pointer;
 
@@ -32,7 +32,7 @@
 		}
 	}
 
-	&__img {
+	.card-img {
 		display: block;
 		width: 100%;
 
@@ -40,7 +40,7 @@
 		border-top-right-radius: $box-border-radius;
 	}
 
-	&__title {
+	.card-title {
 		@include var(color, "secondary");
 
 		display: block;
@@ -56,7 +56,7 @@
 		}
 	}
 
-	&__body {
+	.card-body {
 		@include var(color, "tertiary-2");
 
 		flex-grow: 1;
@@ -65,7 +65,7 @@
 		padding: 0;
 	}
 
-	&__actions {
+	.card-actions {
 		@include var(border-top, (1px, solid, "tertiary-5"));
 
 		padding: 0.5rem 1.5rem;
