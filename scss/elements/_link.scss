@@ -32,7 +32,10 @@
 		@include var(color, "tertiary-3");
 		text-decoration: none;
 
-		transition: color .25s;
+		padding: 0 0.2rem;
+		margin: 0 -0.2rem;
+
+		transition: color .25s, background-color .25s;
 
 		&+ .link-img {
 			margin-right: 0;
@@ -40,7 +43,7 @@
 		}
 	}
 
-	&:hover, &:focus {
+	&:hover {
 		text-decoration: none;
 
 		.link-img-round {
@@ -53,6 +56,15 @@
 
 		.link-title {
 			@include var(color, "tertiary");
+		}
+	}
+
+	&:focus {
+		text-decoration: none;
+
+		.link-title {
+			@include var(background-color, "highlight");
+			@include var(color, "on-highlight");
 		}
 	}
 }
@@ -86,5 +98,10 @@
 	&:focus {
 		@include shadow-outline("tertiary-4");
 		border-color: transparent;
+
+		.link-title {
+			@include var(color, "tertiary-2");
+			background: none;
+		}
 	}
 }

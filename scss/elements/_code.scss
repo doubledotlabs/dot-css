@@ -38,7 +38,7 @@ pre, .code {
 	}
 }
 
-.code__header {
+.code-header {
 	@include var(color, (1px, solid, "secondary"));
 	@include var(background-color, "darker");
 	@include var(border, (1px, solid, "tertiary-5"));

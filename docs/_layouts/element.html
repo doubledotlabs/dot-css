@@ -10,13 +10,13 @@ layout: default
 	{% if page.category %}
 	{% assign category = site.categories | where: "title", page.category | first %}
 	<a class="link" href="{{ site.baseurl }}{{ category.id }}">
-		<i class="link__img material-icons">arrow_back</i>
-		<span class="link__title">"{{ page.category }}" Category</span>
+		<i class="link-img material-icons">arrow_back</i>
+		<span class="link-title">"{{ page.category }}" Category</span>
 	</a>
 	{% else %}
 	<a class="link" href="{{ site.baseurl }}">
-		<img class="link__img" src="/images/ic/back.svg">
-		<span class="link__title">Back</span>
+		<img class="link-img" src="/images/ic/back.svg">
+		<span class="link-title">Back</span>
 	</a>
 	{% endif %}
 	<h1>{{ page.title }}</h1>
@@ -26,7 +26,7 @@ layout: default
 	<div>{{ page.content }}</div>
 
 	<h2 id="code">Code</h2>
-	<div class="code__header">
+	<div class="code-header">
 		<i class="material-icons mr-2">code</i>
 		<a class="text-tertiary" href="{{ site.giturl }}/src/branch/main/{{ category.file | default: page.file }}">{{ category.file | default: page.file }}</a>
 	</div>

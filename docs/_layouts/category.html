@@ -8,8 +8,8 @@ layout: default
 
 <main class="container">
 	<a class="link" href="{{ site.baseurl }}">
-		<i class="link__img material-icons">arrow_back</i>
-		<span class="link__title">Back</span>
+		<i class="link-img material-icons">arrow_back</i>
+		<span class="link-title">Back</span>
 	</a><br>
 	<h1>{{ page.title }}</h1>
 	{{ content }}
@@ -19,9 +19,9 @@ layout: default
 		{% for element in elements %}
 		<div class="col-12 col-lg-6 mb-3">
 			<div class="card h-100">
-				<a class="card__title" href="{{ site.baseurl }}{{ element.id }}">{{ element.title }}</a>
-				<div class="card__body">{{ element.description }}</div>
-				<div class="card__actions">
+				<a class="card-title" href="{{ site.baseurl }}{{ element.id }}">{{ element.title }}</a>
+				<div class="card-body">{{ element.description }}</div>
+				<div class="card-actions">
 					<a class="mr-3" href="{{ site.baseurl }}{{ element.id }}">Documentation</a>
 					<a class="mr-3" href="{{ site.giturl }}/src/branch/main/{{ element.file | default: page.file }}">Source Code</a>
 				</div>
