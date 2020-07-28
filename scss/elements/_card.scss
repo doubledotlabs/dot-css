@@ -2,9 +2,10 @@
 	@include var(background-color, "light");
 	@include var(border, (1px, solid, "tertiary-5"));
 
-	min-width: 250px;
-
 	display: inline-block;
+	display: flex;
+	flex-direction: column;
+
 	vertical-align: top;
 	border-radius: $box-border-radius;
 
@@ -31,6 +32,14 @@
 		}
 	}
 
+	&__img {
+		display: block;
+		width: 100%;
+
+		border-top-left-radius: $box-border-radius;
+		border-top-right-radius: $box-border-radius;
+	}
+
 	&__title {
 		@include var(color, "secondary");
 
@@ -49,6 +58,8 @@
 
 	&__body {
 		@include var(color, "tertiary-2");
+
+		flex-grow: 1;
 
 		margin: 1rem 1.5rem;
 		padding: 0;

@@ -15,12 +15,18 @@ layout: default
 	{{ content }}
 	<h2>Types</h2>
 	{% assign elements = site.elements | where: "category", page.title %}
-	<div>
+	<div class="row">
 		{% for element in elements %}
-		<a class="item" href="{{ site.baseurl }}{{ element.id }}">
-			<span class="item__title">{{ element.title }}</span>
-			{{ element.description }}
-		</a>
+		<div class="col-12 col-lg-6 mb-3">
+			<div class="card h-100">
+				<a class="card__title" href="{{ site.baseurl }}{{ element.id }}">{{ element.title }}</a>
+				<div class="card__body">{{ element.description }}</div>
+				<div class="card__actions">
+					<a class="mr-3" href="{{ site.baseurl }}{{ element.id }}">Documentation</a>
+					<a class="mr-3" href="{{ site.giturl }}/src/branch/main/{{ element.file | default: page.file }}">Source Code</a>
+				</div>
+			</div>
+		</div>
 		{% endfor %}
 	</div>
 </main>

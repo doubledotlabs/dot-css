@@ -6,7 +6,8 @@ description: "A contained item / section of content, often with associated actio
 file: elements/_footer.scss
 ---
 
-<div class="card mr-1 mb-3">
+<div class="card mb-3" style="width: 300px;">
+	<img class="card__img" src="https://jfenn.me/images/headers/cabbage.jpg">
 	<span class="card__title">Normal Card</span>
 	<div class="card__body">
 		Hello! This is a normal card. It is very normal.
@@ -17,14 +18,14 @@ file: elements/_footer.scss
 	</div>
 </div>
 
-<div class="card mr-1 mb-3" onclick="alert('hi!');">
+<div class="card mb-3" style="width: 300px;" onclick="alert('hi!');">
 	<a class="card__title">Clickable Card</a>
 	<div class="card__body">
 		Hello! This card is clickable. You can click it.
 	</div>
 </div>
 
-<div class="card card--accent mr-1 mb-3">
+<div class="card card--accent mb-3" style="width: 300px;">
 	<span class="card__title">Color Card</span>
 	<div class="card__body">
 		This card has an accented background.
