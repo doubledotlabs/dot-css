@@ -1,13 +1,13 @@
 .btn, input[type=submit] {
-	@include var(background-color, "neutral");
-	@include var(color, "secondary-2");
+	@include var(background-color, "accent");
+	@include var(color, "on-accent");
 	@include shadow-light;
 
 	outline: none;
 	text-decoration: none;
 	font-size: 1em;
 
-	border: 1px solid currentColor;
+	border: 1px solid transparent;
 	border-radius: 5px;
 	padding: 0.5rem 1rem;
 
@@ -29,22 +29,34 @@
 	}
 
 	@each $key in $theme-keys {
-		&.btn-#{$key} {
-			@include var(color, "#{$key}-2");
-
+		&.btn-#{$key}, &.btn-outline-#{$key} {
 			&:hover {
-				@include var(background-color, $key);
+				@include var(background-color, ("#{$key}-2", !important));
 			}
 
 			&:focus {
-				@include var(background-color, $key);
+				@include var(background-color, ($key, !important));
 				@include shadow-outline("#{$key}-4");
+			}
+		}
+
+		&.btn-#{$key} {
+			@include var(background-color, ($key, !important));
+		}
+
+		&.btn-outline-#{$key} {
+			@include var(background-color, ("neutral", !important));
+			@include var(color, ("#{$key}-2", !important));
+			border-color: currentColor;
+
+			&:hover, &:focus {
+				@include var(color, ("on-accent", !important));
 			}
 		}
 	}
 
 	&:hover {
-		@include var(background-color, "accent");
+		@include var(background-color, "accent-2");
 		@include var(color, "on-accent");
 		@include shadow;
 
@@ -53,9 +65,9 @@
 	}
 
 	&:focus {
-		@include var(background-color, "highlight");
-		@include var(color, "on-highlight");
-		@include shadow-outline("highlight-4");
+		@include var(background-color, "accent");
+		@include var(color, "on-accent");
+		@include shadow-outline("accent-4");
 
 		border-color: transparent;
 	}
