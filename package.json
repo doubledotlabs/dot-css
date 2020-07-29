@@ -1,6 +1,6 @@
 {
 	"name": "@doubledotlabs/dot.css",
-	"version": "0.0.1",
+	"version": "0.0.9",
 	"description": "",
 	"main": "",
 	"files": [
@@ -15,12 +15,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://code.horrific.dev/james/dot-css.git"
+		"url": "git+https://code.horrific.dev/james/dot.css.git"
 	},
 	"author": "Double Dot Labs <mail@doubledot.dev> (https://doubledot.dev/)",
 	"license": "MPL-2.0",
 	"bugs": {
-		"url": "https://code.horrific.dev/james/dot-css/issues"
+		"url": "https://code.horrific.dev/james/dot.css/issues"
 	},
 	"homepage": "https://doubledot.dev/dot-css",
 	"devDependencies": {
