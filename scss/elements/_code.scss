@@ -5,11 +5,11 @@ code {
 	border-radius: ($box-border-radius/1.5);
 
 	font-family: $font-code;
-	font-size: 0.9em;
+	font-size: sp(12);
 
 	* {
 		font-family: $font-code;
-		font-size: 0.9em;
+		font-size: sp(12);
 	}
 }
 
@@ -82,9 +82,9 @@ pre > code {
 	padding: 0;
 	border: none;
 
-	font-size: 1em;
+	font-size: sp(14);
 
 	* {
-		font-size: 1em;
+		font-size: sp(14);
 	}
 }

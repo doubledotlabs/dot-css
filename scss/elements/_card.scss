@@ -35,7 +35,7 @@
 
 	.card-title {
 		@include var(color, "secondary");
-		font-size: 1.1em;
+		font-size: sp(16);
 
 		display: block;
 		margin-top: 1rem;
@@ -52,6 +52,7 @@
 
 	.card-body {
 		@include var(color, "tertiary-2");
+		font-size: sp(14);
 
 		flex-grow: 1;
 

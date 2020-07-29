@@ -9,7 +9,7 @@ footer, .footer {
 
 .footer__link {
 	@include var(color, "tertiary-2");
-	font-size: .75em;
+	font-size: sp(10);
 
 	&:after {
 		content: "\a";

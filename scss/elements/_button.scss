@@ -5,7 +5,7 @@
 
 	outline: none;
 	text-decoration: none;
-	font-size: 1em;
+	font-size: sp(14);
 
 	border: 1px solid transparent;
 	border-radius: 5px;
@@ -19,12 +19,12 @@
 	-webkit-transition: box-shadow .25s, background-color .25s, border-color .25s, color .25s;
 
 	&.btn-sm {
-		font-size: 0.8em;
+		font-size: sp(10);
 		padding: 0.4rem 0.75rem;
 	}
 
 	&.btn-lg {
-		font-size: 1.4em;
+		font-size: sp(18);
 		padding: 0.75rem 1.5rem;
 	}
 

@@ -136,3 +136,8 @@ $theme-keys: ();
 	#{$attr}: var-defaults($keys);
 	#{$attr}: var-values($keys);
 }
+
+// calculate material design "sp" value for font-size
+@function sp($sp) {
+	@return ($sp / 14) * 1rem;
+}

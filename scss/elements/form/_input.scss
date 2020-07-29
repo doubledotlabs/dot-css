@@ -7,9 +7,9 @@
 	&> .input-title, &> label {
 		display: block;
 		margin: 0;
-		margin-bottom: .2em;
+		margin-bottom: .2rem;
 		padding: 0;
-		font-size: .8em;
+		font-size: sp(10);
 		font-weight: bolder;
 
 		@include var("color", "tertiary-3");
@@ -28,7 +28,7 @@
 	@include var("background-color", "light");
 	@include var("color", "tertiary");
 
-	padding: calc(.6em - 1px) .8em;
+	padding: .5rem .75rem;
 	outline: none;
 	appearance: none;
 	-webkit-appearance: none;

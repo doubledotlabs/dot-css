@@ -1,7 +1,7 @@
 .input.input-select::after {
 	display: block;
 	position: absolute;
-	bottom: 4px;
+	bottom: 7px;
 	right: 4px;
 	width: 24px;
 	height: 24px;
@@ -13,9 +13,7 @@
 select {
 	@include input;
 
-	width: 200px;
-	height: 32px;
-	padding: .4em .6em;
+	width: 180px;
 
 	&::-ms-expand {
 		display: none;

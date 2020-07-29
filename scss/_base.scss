@@ -19,11 +19,13 @@ body {
 	}
 }
 
-h1, h2, h3, h4, h5,
-h1 > a, h2 > a, h3 > a, h4 > a, h5 > a {
-	@include var("color", "secondary-2");
+@for $n from 1 to 6 {
+	h#{$n}, h#{$n} > a {
+		@include var("color", "secondary-2");
 
-    font-family: $font-heading;
+		font-family: $font-heading;
+		font-size: sp(14 + (4 * (5 - $n)));
+	}
 }
 
 p {
