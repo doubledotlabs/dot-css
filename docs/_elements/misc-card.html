@@ -22,7 +22,17 @@ file: elements/_footer.scss
 	you should specify the "tabindex" and "role" attributes, as well as handling
 	the "keydown" event for its click listener -->
 <div class="card mb-3" style="width: 300px;" tabindex="0" role="button" onclick="alert('hi!');" onkeydown="if (event.key == ' ' || event.key == 'Enter' || event.key == 'Spacebar') alert('hi!');">
-	<a class="card-title">Clickable Card</a>
+	<span class="card-title">Clickable Card</span>
+	<div class="card-body">
+		Hello! This card is clickable. You can click it.
+	</div>
+</div>
+
+<!-- Always make sure this works as you expect; if you use an anchor element in
+	a clickable card, specifying a tabindex is not always necessary as the
+	anchor element can be used instead. -->
+<div class="card mb-3" style="width: 300px;" onclick="location.href = '#';">
+	<a href="#" class="card-title">Clickable Card 2</a>
 	<div class="card-body">
 		Hello! This card is clickable. You can click it.
 	</div>
