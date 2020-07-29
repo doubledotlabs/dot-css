@@ -18,7 +18,10 @@ file: elements/_footer.scss
 	</div>
 </div>
 
-<div class="card mb-3" style="width: 300px;" onclick="alert('hi!');">
+<!-- To keep interactive card elements accessible through keyboard navigation,
+	you should specify the "tabindex" and "role" attributes, as well as handling
+	the "keydown" event for its click listener -->
+<div class="card mb-3" style="width: 300px;" tabindex="0" role="button" onclick="alert('hi!');" onkeydown="if (event.key == ' ' || event.key == 'Enter' || event.key == 'Spacebar') alert('hi!');">
 	<a class="card-title">Clickable Card</a>
 	<div class="card-body">
 		Hello! This card is clickable. You can click it.
