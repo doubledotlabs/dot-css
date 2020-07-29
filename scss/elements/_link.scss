@@ -81,7 +81,7 @@
 	@include var(border, (1px, solid, "tertiary-5"));
 	@include var(background-color, "dark");
 
-	transition: background-color .25s, box-shadow .25s, border-color .25s;
+	transition: opacity .25s, background-color .25s, box-shadow .25s, border-color .25s;
 
 	* {
 		@include var(color, "tertiary-2");
@@ -103,6 +103,22 @@
 		.link-title {
 			@include var(color, "tertiary-2");
 			background: none;
+		}
+	}
+
+	@each $key in $theme-keys {
+		&.link-#{$key} {
+			@include var(background-color, "#{$key}-5");
+			@include var(border-color, "#{$key}-4");
+
+			&:hover {
+				@include var(border-color, $key);
+			}
+
+			&:focus {
+				@include shadow-outline("#{$key}-4");
+				border-color: transparent;
+			}
 		}
 	}
 }
