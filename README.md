@@ -30,7 +30,7 @@ These styles include the [`.material-icons`](https://google.github.io/material-d
 
 ## License
 
-```
+```text
 Copyright (c) 2020 dot-css Contributors
 
 This Source Code Form is subject to the terms of the Mozilla Public
