@@ -21,10 +21,14 @@ layout: default
 		explanations are not very well written. I hope to improve on this in the future.
 	</p>
 	<h2>Categories</h2>
-	{% for category in site.categories %}
-	<a class="item" href="{{ site.baseurl }}{{ category.id }}">
-		<span class="item__title">{{ category.title }}</span>
-		{{ category.content }}
-	</a>
-	{% endfor %}
+	<div class="row">
+		{% for category in site.categories %}
+		<div class="col-12 col-lg-6 mb-3">
+			<div class="card h-100" onclick="location.href = '{{ site.baseurl }}{{ category.id }}';">
+				<a class="card-title" href="{{ site.baseurl }}{{ category.id }}">{{ category.title }}</a>
+				<div class="card-body">{{ category.content }}</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
 </main>
