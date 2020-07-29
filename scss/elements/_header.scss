@@ -1,0 +1,60 @@
+.header {
+	@include var(background-color, "primary");
+	@include var(color, "on-primary");
+	@include shadow;
+
+	display: block;
+	align-items: center;
+	z-index: 80;
+
+	.header-left, .header-right {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		min-height: 48px;
+
+		margin: 0 -15px;
+		padding: 0.5rem 15px;
+	}
+
+	.header-left {
+		flex-grow: 1;
+	}
+
+	.header-right {
+		@include var(background-color, "tertiary-5");
+		@include var(border-top, (1px, solid, "on-primary-5"));
+	}
+
+	@include media-breakpoint-up("sm", $grid-breakpoints) {
+		&> .container {
+			display: flex;
+		}
+
+		.header-left, .header-right {
+			flex-wrap: nowrap;
+
+			width: auto;
+			min-width: max-content;
+			background: none;
+			border: none;
+
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.header-brand {
+		@include var(color, "on-primary");
+
+		display: inline-flex;
+		align-items: center;
+
+		font-size: 1.4em;
+		min-height: 48px;
+	}
+
+	* {
+		@include var(color, ("on-primary", !important));
+	}
+}

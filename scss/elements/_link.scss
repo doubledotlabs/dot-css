@@ -1,9 +1,20 @@
 .link {
 	background: none;
 	text-decoration: none;
-	display: flex;
+	display: inline-flex;
 	align-items: center;
+	vertical-align: top;
+	margin-right: 1rem;
 	min-height: 2em;
+
+	opacity: 0.6;
+
+	transition: opacity .25s;
+
+	&-block {
+		display: flex;
+		margin: 0;
+	}
 
 	.link-img {
 		@include var(color, "tertiary");
@@ -11,11 +22,7 @@
 		width: 24px;
 		min-width: 24px;
 		height: 24px;
-		margin-right: 12px;
-
-		opacity: 0.6;
-
-		transition: opacity .25s;
+		margin-right: 8px;
 
 		&-round {
 			@extend .link-img;
@@ -29,7 +36,7 @@
 	}
 
 	.link-title {
-		@include var(color, "tertiary-3");
+		@include var(color, "tertiary");
 		text-decoration: none;
 
 		padding: 0 0.2rem;
@@ -39,28 +46,22 @@
 
 		&+ .link-img {
 			margin-right: 0;
-			margin-left: 12px;
+			margin-left: 8px;
 		}
 	}
 
 	&:hover {
 		text-decoration: none;
+		opacity: 1;
 
 		.link-img-round {
 			@include var(border-color, "tertiary");
-		}
-
-		.link-img:not(.link-img-round) {
-			opacity: 1;
-		}
-
-		.link-title {
-			@include var(color, "tertiary");
 		}
 	}
 
 	&:focus {
 		text-decoration: none;
+		opacity: 1;
 
 		.link-title {
 			@include var(background-color, "highlight");

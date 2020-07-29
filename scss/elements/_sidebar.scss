@@ -1,6 +1,6 @@
 .sidebar ~ .container,
 .sidebar ~ *>.container {
-	padding-right: 75px;
+	padding-right: 45px;
 }
 
 .sidebar {
@@ -19,7 +19,7 @@
 	overflow-y: hidden;
 	z-index: 98;
 
-	transform: translateX(80%);
+	transform: translateX(90%);
 	transition: transform .25s, box-shadow .25s;
 
 	&> * {
@@ -41,14 +41,17 @@
 .sidebar::before {
 	@include var(color, "secondary-4");
 
-	content: '‹';
+	content: '...';
 	display: block;
+	width: 24px;
+	height: 24px;
+	text-align: center;
 	font-size: 2em;
 
 	position: relative;
-	left: 0;
+	left: -0.5rem;
 	top: 50%;
-	transform: translateY(-50%);
+	transform: rotate(90deg) translateY(-50%);
 
 	transition: opacity .25s;
 }
@@ -57,7 +60,7 @@
 	opacity: 0;
 }
 
-@media(min-width: 800px) {
+@include media-breakpoint-up("md", $grid-breakpoints) {
 	.sidebar ~ .container,
 	.sidebar ~ *>.container {
 		padding-right: 300px;
@@ -81,5 +84,4 @@
 	.sidebar::before {
 		display: none;
 	}
-
 }

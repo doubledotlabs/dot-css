@@ -9,6 +9,7 @@
 @import "utilities/colors";
 @import "utilities/shadows";
 @import "utilities/material-icons";
+@import "utilities/bootstrap";
 
 * {
 	font-family: $font-body;
@@ -40,11 +41,9 @@
 @import "elements/card";
 @import "elements/code";
 @import "elements/footer";
+@import "elements/header";
 @import "elements/link";
-@import "elements/nav";
 @import "elements/sidebar";
 @import "elements/snackbar";
 @import "elements/table";
 @import "elements/text";
-
-@import "utilities/bootstrap";
