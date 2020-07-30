@@ -29,4 +29,4 @@ build: install
 	[ -d build ] || mkdir build
 	${NPX} sass scss/styles.scss build/styles.css
 	[ -d dist ] || mkdir dist
-	node_modules/postcss-cli/bin/postcss build/styles.css -o dist/styles.css
+	${NPX} -p postcss-cli postcss build/styles.css -o dist/styles.css

@@ -1,4 +1,4 @@
-footer, .footer {
+.footer {
 	@include var(background-color, "dark");
 	@include var(border-top, (1px, solid, "tertiary-5"));
 
@@ -6,12 +6,26 @@ footer, .footer {
 	padding: 1rem 0;
 }
 
-.footer__link {
+.footer-link {
 	@include var(color, "tertiary-2");
 	font-size: sp(10);
 
 	&:after {
 		content: "\a";
 		white-space: pre;
+	}
+}
+
+.footer-container {
+	display: flex;
+	flex-direction: column;
+
+	.container {
+		flex-grow: 1;
+	}
+
+	.footer {
+		flex-grow: unset;
+		flex-shrink: 0;
 	}
 }

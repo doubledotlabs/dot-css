@@ -1,3 +1,6 @@
+$nav-width: 84px !default;
+$nav-height: 64px !default;
+
 .nav {
 	@include var(background-color, "lighter");
 	@include var(color, "secondary");
@@ -14,7 +17,7 @@
 	justify-content: center;
 	z-index: 110;
 
-	height: 64px;
+	height: $nav-height;
 
 	.nav-item {
 		color: inherit;
@@ -42,6 +45,7 @@
 			.nav-item-title {
 				opacity: 1;
 				transform: translateY(0);
+				visibility: visible;
 			}
 		}
 
@@ -55,6 +59,7 @@
 			height: 18px;
 			font-size: sp(12);
 			opacity: 0;
+			visibility: hidden;
 
 			transform: translateY(9px);
 
@@ -64,7 +69,7 @@
 }
 
 .nav-container {
-	padding-bottom: 64px;
+	padding-bottom: $nav-height;
 }
 
 @include media-breakpoint-up("md", $grid-breakpoints) {
@@ -76,7 +81,7 @@
 		box-shadow: none;
 
 		height: auto;
-		width: 72px;
+		width: $nav-width;
 
 		position: absolute;
 		top: 0;
@@ -98,6 +103,6 @@
 	.nav-container {
 		position: relative;
 		padding-bottom: 0;
-		padding-left: 72px;
+		padding-left: $nav-width;
 	}
 }

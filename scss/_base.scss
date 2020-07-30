@@ -44,8 +44,6 @@ a {
 	margin: 0 -0.2rem;
 
 	transition: color .25s, background-color .25s;
-	-moz-transition: color .25s, background-color .25s;
-	-webkit-transition: color .25s, background-color .25s;
 }
 
 a:hover, a:focus {
@@ -60,21 +58,8 @@ a:not(.link):focus {
 }
 
 html, body {
-	height: 100%;
-}
-
-body.--sticky-footer {
-	// flex display for sticky footer
-	display: flex;
-	flex-direction: column;
-
-	&> main {
-		flex: 1 0 auto;
-	}
-
-	&+ footer, &+ .footer {
-		flex-shrink: 0;
-	}
+	height: auto;
+	min-height: 100vh;
 }
 
 ::selection {
