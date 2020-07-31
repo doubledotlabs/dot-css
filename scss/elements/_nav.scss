@@ -74,7 +74,6 @@ $nav-height: 64px !default;
 
 @include media-breakpoint-up("md", $grid-breakpoints) {
 	.nav {
-		background: none;
 		border: none;
 		@include var(border-right, (1px, solid, "tertiary-5"));
 
@@ -83,7 +82,7 @@ $nav-height: 64px !default;
 		height: auto;
 		width: $nav-width;
 
-		position: absolute;
+		position: fixed;
 		top: 0;
 		bottom: 0;
 		left: 0;

@@ -36,6 +36,12 @@ pre, .code {
 	&[data-ts="8"] {
 		tab-size: 8;
 	}
+
+	&> code {
+		padding: 0 !important;
+		background: none !important;
+		overflow-x: unset !important;
+	}
 }
 
 .code-header {
