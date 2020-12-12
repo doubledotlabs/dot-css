@@ -122,3 +122,17 @@
 		}
 	}
 }
+
+@media (prefers-color-scheme: dark) {
+	img.link-img {
+		filter: contrast(0) brightness(2);
+	}
+}
+
+.--theme-light img.link-img {
+	filter: contrast(0) brightness(0);
+}
+
+.--theme-dark img.link-img {
+	filter: contrast(0) brightness(2);
+}
