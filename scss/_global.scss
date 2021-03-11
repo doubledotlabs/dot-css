@@ -29,7 +29,7 @@ $theme-light: (
 	"on-secondary": #FFFFFF,
 	"tertiary": #000000,
 	"on-tertiary": #FFFFFF,
-	"accent": #007bff,
+	"accent": #0063cc,
 	"on-accent": #FFFFFF,
 	"highlight": #004fa3,
 	"on-highlight": #FFFFFF,
@@ -42,11 +42,11 @@ $theme-light: (
 ) !default;
 
 $theme-dark: (
-	"lighter": #424242,
-	"light": #303030,
-	"neutral": #212121,
-	"dark": #151515,
-	"darker": #101010,
+	"lighter": #223636,
+	"light": #162222,
+	"neutral": #101515,
+	"dark": #050808,
+	"darker": #000505,
 	"primary": #cefff6,
 	"on-primary": #000000,
 	"secondary": rgb(147, 255, 236),
@@ -63,7 +63,6 @@ $theme-dark: (
 	"info": #17a2b8,
 	"white": #FFFFFF,
 	"black": #000000
-
 ) !default;
 
 $themes: (
