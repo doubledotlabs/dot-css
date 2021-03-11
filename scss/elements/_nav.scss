@@ -51,6 +51,7 @@ $nav-height: 64px !default;
 
 		.nav-item-img {
 			transform: translateY(9px);
+			backface-visibility: hidden;
 
 			transition: transform .25s;
 		}
@@ -62,6 +63,7 @@ $nav-height: 64px !default;
 			visibility: hidden;
 
 			transform: translateY(9px);
+			backface-visibility: hidden;
 
 			transition: transform .25s, opacity .25s;
 		}
