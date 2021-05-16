@@ -1,17 +1,8 @@
 @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap-utilities.scss";
 
 // override bootstrap themes (color styles are defined elsewhere)
 $theme-colors: ();
 
-@import "../../node_modules/bootstrap/scss/utilities/align";
-@import "../../node_modules/bootstrap/scss/utilities/borders";
-@import "../../node_modules/bootstrap/scss/utilities/float";
-@import "../../node_modules/bootstrap/scss/utilities/overflow";
-@import "../../node_modules/bootstrap/scss/utilities/sizing";
-
 @import "../../node_modules/bootstrap/scss/mixins/deprecate";
-@import "../../node_modules/bootstrap/scss/mixins/text-hide";
 @import "../../node_modules/bootstrap/scss/mixins/text-truncate";
-@import "../../node_modules/bootstrap/scss/utilities/text";
-
-@import "../../node_modules/bootstrap/scss/utilities/visibility";

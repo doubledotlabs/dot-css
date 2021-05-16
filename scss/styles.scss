@@ -1,6 +1,6 @@
 /*!
  * dot.css (https://code.horrific.dev/james/dot.css)
- * Copyright (c) 2020 dot-css Contributors
+ * Copyright (c) 2021 dot-css Contributors
  * Licensed under MPL v2.0 (https://code.horrific.dev/james/dot.css/src/branch/main/LICENSE)
  */
 
@@ -13,9 +13,7 @@
 
 * {
 	font-family: $font-body;
-	animation-name: fadeIn;
-	animation-duration: .3s;
-	animation-timing-function: ease-out;
+	box-sizing: border-box;
 
 	@include theme-vars(map-get($themes, "light"));
 }

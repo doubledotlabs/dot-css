@@ -1,7 +1,7 @@
 dot.css [![NPM Package](https://img.shields.io/npm/v/@doubledotlabs/dot.css?color=red&logo=npm)](https://www.npmjs.com/package/@doubledotlabs/dot.css) [![Discord](https://img.shields.io/discord/514625116706177035.svg?logo=discord&colorB=7289da)](https://discord.jfenn.me/)
 =====
 
-[dot.css](https://doubledot.dev/dot-css/) is a simple CSS framework designed to be intuitive and effective.
+[dot.css](https://jfenn.me/styles/) is a simple CSS framework designed to be intuitive and effective.
 
 ## Usage
 
@@ -31,7 +31,7 @@ These styles include the [`.material-icons`](https://google.github.io/material-d
 ## License
 
 ```text
-Copyright (c) 2020 dot-css Contributors
+Copyright (c) 2021 dot-css Contributors
 
 This Source Code Form is subject to the terms of the Mozilla Public
 License, v. 2.0. If a copy of the MPL was not distributed with this

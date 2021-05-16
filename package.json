@@ -1,6 +1,6 @@
 {
 	"name": "@doubledotlabs/dot.css",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "",
 	"main": "",
 	"files": [
@@ -30,7 +30,7 @@
 		"sass": "^1.23.3"
 	},
 	"dependencies": {
-		"bootstrap": "^4.5.0"
+		"bootstrap": "^5.0.1"
 	},
 	"bundledDependencies": [
 		"bootstrap"
