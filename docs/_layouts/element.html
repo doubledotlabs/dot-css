@@ -28,7 +28,7 @@ layout: default
 	<h2 id="code">Code</h2>
 	<div class="code-header">
 		<i class="material-icons me-2">code</i>
-		<a class="text-tertiary" href="{{ site.giturl }}/src/branch/main/{{ category.file | default: page.file }}">{{ category.file | default: page.file }}</a>
+		<a class="text-tertiary" href="{{ site.giturl }}/blob/main/{{ category.file | default: page.file }}">{{ category.file | default: page.file }}</a>
 	</div>
 	<pre><code class="html">{{ page.content | xml_escape }}</code></pre>
 </main>

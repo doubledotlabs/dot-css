@@ -1,4 +1,5 @@
-dot.css [![NPM Package](https://img.shields.io/npm/v/@doubledotlabs/dot.css?color=red&logo=npm)](https://www.npmjs.com/package/@doubledotlabs/dot.css) [![Discord](https://img.shields.io/discord/514625116706177035.svg?logo=discord&colorB=7289da)](https://discord.jfenn.me/)
+dot.css [![Build Status](https://github.com/doubledotlabs/dot-css/workflows/Build%20SCSS/badge.svg)](https://github.com/doubledotlabs/dot-css/actions)
+[![NPM Package](https://img.shields.io/npm/v/@doubledotlabs/dot.css?color=red&logo=npm)](https://www.npmjs.com/package/@doubledotlabs/dot.css)
 =====
 
 [dot.css](https://jfenn.me/styles/) is a simple CSS framework designed to be intuitive and effective.
