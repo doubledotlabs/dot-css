@@ -39,30 +39,6 @@ p {
 	@include var("color", "tertiary-2");
 }
 
-a {
-	@include var("color", "accent");
-
-	cursor: pointer;
-	outline: none;
-	text-decoration: none;
-
-	padding: 0 0.2rem;
-	margin: 0 -0.2rem;
-
-	transition: color .25s, background-color .25s;
-}
-
-a:hover, a:focus {
-	@include var("color", "highlight");
-	text-decoration: underline;
-}
-
-a:not(.link):focus {
-	@include var(background-color, ("highlight", !important));
-	@include var(color, ("on-highlight", !important));
-	text-decoration-color: transparent;
-}
-
 html, body {
 	height: auto;
 	min-height: 100vh;
