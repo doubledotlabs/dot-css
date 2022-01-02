@@ -32,9 +32,13 @@ a, .text-link {
 	text-decoration: none;
 
 	font-size: 1em;
+	background: none;
 	border: none;
-	padding: 0 0.2rem;
-	margin: 0 -0.2rem;
+
+	&:not(.link) {
+		padding: 0 0.2rem;
+		margin: 0 -0.2rem;
+	}
 
 	transition: color .25s, background-color .25s;
 
