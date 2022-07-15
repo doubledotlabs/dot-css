@@ -2,7 +2,7 @@ code {
 	@include var(background-color, "dark");
 
 	padding: 2px 6px;
-	border-radius: ($box-border-radius/1.5);
+	border-radius: calc($box-border-radius / 1.5);
 
 	font-family: $font-code;
 	font-size: sp(12);

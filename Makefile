@@ -27,6 +27,6 @@ package-install.lock: package.json
 
 build: install
 	[ -d build ] || mkdir build
-	${NPX} sass scss/styles.scss build/styles.css
+	${NPX} sass@1.53.0 scss/styles.scss build/styles.css
 	[ -d dist ] || mkdir dist
-	${NPX} -p postcss-cli@7.1.2 postcss build/styles.css -o dist/styles.css
+	npx postcss-cli@10.0.0 build/styles.css -o dist/styles.css

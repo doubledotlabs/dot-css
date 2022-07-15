@@ -1,0 +1,47 @@
+---
+layout: element
+title: Tabs
+category: Navigation
+description: "A horizontal list of segments of inline page content."
+file: scss/elements/_nav.scss
+---
+
+<nav class="nav nav-tabs" role="tablist">
+	<button class="nav-item active" role="tab">
+		<span class="nav-item-img material-icons">home</span>
+		<span class="nav-item-title">Home</span>
+	</button>
+	<button class="nav-item" role="tab">
+		<span class="nav-item-img material-icons">explore</span>
+		<span class="nav-item-title">Explore</span>
+	</button>
+	<a href="#" class="nav-item" role="tab">
+		<span class="nav-item-title">Profile</span>
+	</a>
+</nav>
+
+<div class="" role="tabpanel">
+	Home tab
+</div>
+<div class="d-none" role="tabpanel">
+	Explore tab
+</div>
+<div class="d-none" role="tabpanel">
+	Profile tab
+</div>
+
+<script type="text/javascript">
+	const tabs = document.querySelectorAll(".nav-item");
+	const panels = document.querySelectorAll("[role='tabpanel']");
+
+	for (let i = 0; i < tabs.length; i++) {
+		tabs[i].addEventListener("click", () => {
+			tabs.forEach(e => e.classList.remove("active"));
+			tabs[i].classList.add("active");
+
+			panels.forEach(e => e.classList.add("d-none"));
+			panels[i].classList.remove("d-none");
+		});
+	}
+</script>
+

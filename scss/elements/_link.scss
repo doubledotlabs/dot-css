@@ -54,19 +54,20 @@
 		}
 	}
 
-	&:hover {
+	@include focus-any {
 		text-decoration: none;
 		opacity: 1;
 
-		.link-img-round {
-			@include var(border-color, "tertiary");
+		.link-title {
+			text-decoration: underline;
 		}
 	}
 
-	&:focus {
-		text-decoration: none;
-		opacity: 1;
+	&:hover .link-img-round {
+		@include var(border-color, "tertiary");
+	}
 
+	@include focus-visible {
 		.link-title {
 			@include var(background-color, "highlight");
 			@include var(color, "on-highlight");

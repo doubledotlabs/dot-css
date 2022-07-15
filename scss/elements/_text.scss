@@ -24,6 +24,15 @@
     min-width: 200px;
 }
 
+.text, p {
+	&> a, .text-link {
+		&:not(.link) {
+			padding: 0 0.2rem;
+			margin: 0 -0.2rem;
+		}
+	}
+}
+
 a, .text-link {
 	@include var("color", "accent");
 
@@ -35,12 +44,8 @@ a, .text-link {
 	background: none;
 	border: none;
 
-	&:not(.link) {
-		padding: 0 0.2rem;
-		margin: 0 -0.2rem;
-	}
-
 	transition: color .25s, background-color .25s;
+
 
 	&:hover, &:focus {
 		@include var("color", "highlight");

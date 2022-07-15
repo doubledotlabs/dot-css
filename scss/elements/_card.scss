@@ -8,6 +8,7 @@
 
 	vertical-align: top;
 	border-radius: $box-border-radius;
+	overflow: hidden;
 
 	transition: background-color .25s, border .25s, box-shadow .25s;
 

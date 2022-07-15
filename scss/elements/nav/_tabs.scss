@@ -1,0 +1,39 @@
+$tabs-height: 48px !default;
+
+.nav-tabs {
+	display: flex;
+	align-items: center;
+	overflow-x: auto;
+
+
+	.nav-item {
+		flex-direction: row;
+		position: relative;
+
+		min-width: fit-content;
+		height: $tabs-height;
+		padding: 0 8px;
+
+		&::after {
+			content: ' ';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			height: 0;
+			background-color: transparent;
+			transition: height .25s, background-color .25s;
+		}
+
+		&.active::after {
+			height: 4px;
+			background-color: currentColor;
+		}
+
+		.nav-item-img {
+			margin-right: 8px;
+		}
+	}
+}
