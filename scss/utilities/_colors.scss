@@ -1,13 +1,26 @@
 @each $key, $value in map-get($themes, "light") {
 	.text-#{$key} {
 		@include var(color, ($key, !important));
+		@include var("--rel-highlight", ($key, !important));
 	}
 
 	.bg-#{$key} {
 		@include var(background-color, ($key, !important));
 	}
+}
 
-	.border-#{$key} {
-		@include var(border-color, ($key, !important));
+.bg-none {
+	background: none !important;
+}
+
+@each $side in ("", "-top", "-left", "-right", "-bottom") {
+	.border#{$side}-none {
+		border#{$side}: none !important;
+	}
+
+	@each $key, $value in map-get($themes, "light") {
+		.border#{$side}-#{$key} {
+			@include var(border#{$side}-color, ($key, !important));
+		}
 	}
 }

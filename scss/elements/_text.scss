@@ -35,6 +35,7 @@
 
 a, .text-link {
 	@include var("color", "accent");
+	@include var("--rel-highlight", "highlight");
 
 	cursor: pointer;
 	outline: none;
@@ -48,7 +49,7 @@ a, .text-link {
 
 
 	&:hover, &:focus {
-		@include var("color", "highlight");
+		color: var(--rel-highlight);
 		text-decoration: underline;
 	}
 
