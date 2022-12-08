@@ -6,12 +6,17 @@
 
 @import "global";
 
+*, *:before, *:after {
+	font-family: inherit;
+	box-sizing: inherit;
+}
+
 @import "utilities/shadows";
 @import "utilities/material-icons";
 @import "utilities/bootstrap";
 @import "utilities/colors";
 
-* {
+:root {
 	font-family: $font-body;
 	box-sizing: border-box;
 
@@ -19,14 +24,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
-	* {
+	:root {
 		@include theme-vars(map-get($themes, "dark"));
 	}
 }
 
 @each $name, $theme in $themes {
-	.--theme-#{$name},
-	.--theme-#{$name} * {
+	.--theme-#{$name} {
 		@include theme-vars($theme);
 	}
 }
